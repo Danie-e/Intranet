@@ -1,46 +1,23 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+O IntraVerso se trata de uma intranet com funções focadas em auxiliar a comunicação da empresa, e o desenvolvimento dos funcionários. Teremos funções para que o setor de RH e líderes possam publicar avisos para as equipes ou para a empresa de modo geral, centralizando assim, os avisos importantes da empresa. Outra função que auxiliará na comunicação, são as pesquisas, onde será possível coletar dados dos funcionários, de forma mais organizada e prática. Já as funções focadas no desenvolvimento da equipe, será o controle de planos de desenvolvimento, sendo possível administrar o conteúdo e tempo de realização. E a criação de quizzes, onde será possível conferir o conhecimento dos funcionários sobre determinados assuntos. 
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Em um ambiente empresarial dinâmico, a comunicação eficiente e o desenvolvimento contínuo dos colaboradores são essenciais.  
+No entanto, muitas empresas enfrentam obstáculos significativos nesses aspectos, pois à medida que a empresa cresce, a comunicação entre setores, e principalmente do RH, que precisa, muitas vezes comunicar com todo o restante da empresa, fica cada vez mais complexa, já que os setores ficam cada vez mais distantes, o que pode afetar a eficácia da comunicação.   
+Outro ponto que é dificultado com o crescimento da empresa, e aumento dos times, é a gestão dos líderes sobre o desenvolvimento dos funcionários, no dia a dia, os líderes acabam por muitas vezes focando nas tarefas pendentes e até mesmo nas métricas de produtividade do setor, e acaba dedicando pouca ou nenhuma atenção sobre o desenvolvimento de novas habilidades técnicas e comportamentais do time.  
+Com times grandes, a tarefa de validar as habilidades dos funcionários, ou até mesmo seu desempenho, pode ser de grande esforço, por exemplo, se vamos implementar uma nova premiação, e quero validar o quais funcionários se dedicaram em aprender uma nova tecnologia, o que pode ser fácil dentro de uma empresa pequena mas muito complexo em uma empresa de grande porte, pois não se pode ter controle de todos os funcionários o que e facilmente resolvido com os PDI’s onde o a própria plataforma gerencia e relata de forma quantitativa essas métricas. 
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
-
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O IntraVerso tem como objetivo facilitar a comunicação da organização com seus funcionários, criando um espaço que centralize as informações importantes para os funcionários, podendo setorizar ou distribuir a todos da empresa os comunicados, criando assim um ambiente distinto dos que seguem as informações formais relacionadas ao trabalho individual, sem gerar a sobrecarga de informação. Outro foco importante da aplicação será facilitar o desenvolvimento dos funcionários, centralizando os planos de desenvolvimento da equipe e podendo testar o nível de conhecimento dos funcionários. 
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+O projeto IntraVerso oferece soluções para os desafios de comunicação e desenvolvimento enfrentados por empresas em crescimento. Centralizando informações importantes, como decisões empresariais, e permitindo a divulgação de tópicos relevantes a cada setor, ele melhora a eficiência da comunicação e alinha os esforços de toda a organização. 
+Além disso, ao centralizar os planos de desenvolvimento da equipe e oferecer quizzes para testar o conhecimento dos funcionários facilitando o desenvolvimento contínuo dos colaboradores. Isso promove uma cultura de aprendizado e crescimento, enquanto simplifica a coleta de dados dos funcionários, proporcionando uma análise mais precisa e eficiente para a tomada de decisões. 
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+O público-alvo deste sistema de intranet são quaisquer empresas de pequeno á médio porte que estão em fase de crescimento ou expansão. Essas empresas enfrentam desafios específicos relacionados à comunicação interna e ao desenvolvimento dos funcionários devido ao aumento do tamanho da equipe e da complexidade organizacional, e como estão em expansão, ainda estão procurando e testando qual a melhor solução. Portanto, o sistema se destina a ajudar essas empresas a superarem esses obstáculos, fornecendo uma plataforma centralizada e personalizada. Ao focar nessas empresas em crescimento, o sistema tem mais chances de ser implementado, já que uma empresa já consolidada em um porte maior, muitas vezes já terá alguma solução em andamento, e terá uma barreira maior para implementação do uso. 

@@ -1,0 +1,22 @@
+body{
+    
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align:right;
+}
+
+.inputPadrao{
+    display: inline-block;
+    margin: 1em;
+    width: 50vh;
+    height: 20px;
+}
+
+.botaoLogin{
+    width: 20vh;
+}
+

@@ -1,0 +1,9 @@
+@import url(/src/css/login.css);
+
+:root{
+    --color-fundo: #F5F5F5;
+}
+
+body{
+    background-color: var(--color-fundo);
+}

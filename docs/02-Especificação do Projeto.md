@@ -1,44 +1,22 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
-
-## Personas
-
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|ID    | EU COMO...               | QUERO/PRECISO ...                                                                                  | PARA ...                                                                             |
+|------|--------------------------|----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+|RF-01 | Eu como analista de RH   | Preciso cadastrar usuários e criar equipes para classificar os funcionários e líderes entre elas   | para que os funcionários possam usar da melhor maneira as funcionalidades do sistema.|
+|RF-02 | Eu como analista de RH   | Desejo criar publicações                                                                           | para manter as equipes atualizada sobre qualquer noticia ou informação relevante.    |
+|RF-03 | Eu como coordenador      | Quero criar publicações, quizzes e formulários                                                     | para manter minha equipe atualizada sobre qualquer noticia ou informação relevante.  |
+|RF-04 | Eu como coordenador      |Desejo criar planos de desenvolvimento individual                                                   | para estimular a melhoria contínua do meu time.                                      |
+|RF-05 | Eu como coordenador      |Preciso criar quizzes e formulários                                                                 | para conseguir coletar informações da minha equipe de forma prática e eficiente.     |
+|RF-06 | Eu como analista de RH   |Quero gerar relatórios com base no resultado dos quizzes e formulários.                             | para coletar informações dos funcionários de forma prática.                          |
+|RF-07 | Eu como funcionário      |Desejo ver as postagens de outros setores                                                           | para poder me atualizar sobre diversos tópicos que possam me interessar.             |
+|RF-08 | Eu como funcionário      |Desejo adicionar aos favoritos os posts que me interessam                                           | para poder acessá-los de maneira fácil posteriormente.                               |
+|RF-09 | Eu como funcionário      |Preciso ter acesso as postagens do meu setor                                                        | para poder me manter atualizado sobre meu setor atual.                               |
+|RF-10 | Eu como funcionário      |Desejo criar, alterar e visualizar o conteúdo e prazos dos meus planos de desenvolvimento           | para poder estudar os conteúdos propostos e aprimorar minhas habilidades.            |
 
 ## Requisitos
 
@@ -46,46 +24,27 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
-
+|ID    | Descrição do Requisito                                                                                          | Prioridade |
+|------|-----------------------------------------------------------------------------------------------------------------|------------|
+|RF-01 | Cadastrar usuários no sistema.                                                                                  | Alta  | 
+|RF-02 | Permitir cadastrar post informativos.                                                                           | Alta  |
+|RF-03 | Conseguir cadastrar os posts separando por setor.                                                               | Alta  |
+|RF-04 | Conseguir cadastrar planos de desenvolvimento, com prazo e conteúdo para que outros funcionários possam aderir. | Alta  |
+|RF-05 | Cadastrar quizzes e formulários.                                                                                | Média |
+|RF-06 | Criar relatórios com base no resultado dos quizzes e formulários.                                               | Média |
+|RF-07 | Conseguir realizar pesquisa entre os posts publicados filtrando pelo título ou categoria.                       | Média |
+|RF-08 | Conseguir salvar as publicações como favoritos.                                                                 | Baixa |
+|RF-09 | Ter uma página para ver os posts da categoria onde o funcionário logado está inserido.                          | Baixa | 
+|RF-10 | Conseguir cadastrar e atualizar planos de desenvolvimento individual, com prazo e conteúdo.                     | Alta  |
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
-## Restrições
-
-O projeto está restrito pelos itens apresentados na tabela a seguir.
-
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|-------|-----------------------------------------------------------|------------|
+|RNF-01 | Ter validação de senha e usuário, onde o analista de RH cria a conta com o e-mail fornecido pelo usuário ou pelo e-mail empresarial (se houver) e o usuário altera a senha após o primeiro uso. | Alta  | 
+|RNF-02 | Não demorar mais que 10 segundos no carregamento das páginas.  | Alta  | 
+|RNF-03 | Ser autoexplicativo, não depender de tutoriais para uso. | Media |
+|RNF-04 | Ser responsivo para todas as telas de monitores, smartphone e tablet. | Media |
+|RNF-05 | A senha deve ser redefinida a cada 3 meses.  | Media |
 
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)

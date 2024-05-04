@@ -1,42 +1,9 @@
 @import url(/src/css/reset.css);
+@import url(/src/css/login.css);
 
 :root{
     --color-fundo: #F5F5F5;
 }
-
 body{
     background-color: var(--color-fundo);
-    display: flex;
-}
-
-img{
-    object-fit: cover; /*para não a qualidade da imagem*/
-}
-
-
-/*CSS do template padrão*/
-
-#imagem_logo{
-    width: 50px;
-    height: 50px;
-    border-radius: 20px;
-}
-
-#menu{
-    display: flex;
-    flex-direction: column;
-    background-color: #F0F0F0;
-    height: 100vh;
-    border-radius: 0px 18px 18px 0px;
-
-}
-
-#logo_e_menus{
-
-}
-
-#item {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
 }

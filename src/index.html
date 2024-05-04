@@ -10,23 +10,26 @@
 
 <body>
     <section class="container">
-            <div class="titulos">
-                <h1>Intraverso</h1>
-                <br>
-                <h3>Transformando relações internas</h3>
+        <div class="titulos">
+            <h1>Intraverso</h1>
+            <br>
+            <h3>Transformando relações internas</h3>
 
-                <form class="formulario">
-                    <label> Usuario:</label>
-                    <input type="text" alt="Digite seu usuario" class="inputPadrao">
-                    <label> Senha:</label>
-                    <input type="password" alt="Digite sua senha" class="inputPadrao">
-                    <button type="button" placeholder="Login" alt="Click para ralizar o login" class="botaoLogin">
-                        Login
-                    </button>
-                </form>
-            </div>
+            <form class="formulario">
+                <label> Usuario:</label>
+                <input type="text" alt="Digite seu usuario" class="inputPadrao" id="usuario" required>
+                <label> Senha:</label>
+                <input type="password" alt="Digite sua senha" class="inputPadrao" id="senha" required>
+                <button type="submit" placeholder="Login" alt="Click para ralizar o login" class="botaoLogin" id="login"
+                    onclick="validarUsuario()">
+                    Login
+                </button>
+            </form>
+        </div>
         <img src="/src/img/empresas.jpg" class="imagem_login">
 
     </section>
+    <script src="js/login.js"></script>
+</body>
 
 </html>

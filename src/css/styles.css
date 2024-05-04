@@ -1,8 +1,8 @@
 @import url(/src/css/reset.css);
-@import url(/src/css/login.css);
 
 :root{
     --color-fundo: #F5F5F5;
+    --color-verde-claro: #008F8C;
 }
 body{
     background-color: var(--color-fundo);

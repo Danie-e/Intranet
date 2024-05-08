@@ -10,7 +10,7 @@ async function connect() {
     return singleton;
 }
 
-module.exports = async function procurarUsuario(nomeUsuario, senhaUsuario) {
+async function procurarUsuario(nomeUsuario, senhaUsuario) {
     let db = await connect();
     let resultado = await db.collection("usuarios").findOne({ nome: nomeUsuario })
     console.log(resultado);
@@ -18,3 +18,7 @@ module.exports = async function procurarUsuario(nomeUsuario, senhaUsuario) {
 }
 //Teste se esta funcionado, apagar depois
 procurarUsuario('Admin', 'Admin');
+
+module.exports={
+    procurarUsuario
+}

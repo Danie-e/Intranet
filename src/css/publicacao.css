@@ -1,0 +1,77 @@
+@import url(/src/css/styles.css);
+
+.menuSuperior {
+    height: 1vh;
+    width: 0, 1vw;
+    display: flex;
+    margin: 35px 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li {
+    margin: 0px 10px;
+}
+
+.menu li p {
+    background-color: var(--color-branco);
+    padding: 10px;
+}
+
+.icones {
+    padding: 10px;
+    height: 45px;
+    width: 45px;
+}
+
+.menuLateral {
+    margin-top: 10px;
+}
+
+.formularioPublicacao {
+    display: block;
+    width: 100%;
+    padding: 10px 30px;
+    align-items: center;
+    justify-content: end;
+}
+
+
+.formularioPublicacao form input {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.descricao {
+    height: 100px;
+}
+
+.excluir {
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+}
+
+.cancelar {
+    background-color: var(--color-cancelar);
+    height: 40px;
+    width: 150px;
+}
+
+.confirmar {
+    background-color: var(--color-verde-intermediario);
+    height: 40px;
+    width: 150px;
+}
+
+@media only screen and (max-width: 800px) {
+    .menu li p {
+        visibility: hidden;
+    }
+}

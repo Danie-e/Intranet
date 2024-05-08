@@ -38,28 +38,42 @@
         </ul>
 
     </section>
+    <main>
+        <section class="formularioPublicacao">
+            <form>
+                <input type="text" name="titulo" class="titulo" placeholder="Digite o titulo da publicação"
+                    alt="Digite o titulo da publicação">
+                <input type="text" name="resumo" class="resumo"
+                    placeholder="Adicione uma breve descrição sobre o conteudo do post"
+                    alt="Adicione uma breve descrição sobre o conteudo do post">
+                <input type="file" name="capa" placeholder="Adicione uma imagem para capa do post"
+                    alt="Adicione uma imagem para capa do post">
+                <textarea name="descricao" class="descricao" placeholder="Digite aqui o texto da publicação"
+                    alt="Digite aqui o texto da publicação"></textarea>
 
-    <section class="formularioPublicacao">
-        <form action="post">
-            <input type="text" placeholder="Digite o titulo da publicação" alt="Digite o titulo da publicação">
-            <input type="text" placeholder="Adicione uma breve descrição sobre o conteudo do post"
-                alt="Adicione uma breve descrição sobre o conteudo do post" class="descricao">
-            <input type="file" placeholder="Adicione uma imagem para capa do post"
-                alt="Adicione uma imagem para capa do post">
-            <input type="text" placeholder="Texto da publicação" alt="Texto da publicação">
-            <label >Adicionar Setores</label>
-            <input type="text" placeholder="Adicionar Setores" list="setor">
-            <datalist id="setor">
-                <option value="">faixa etária:</option>
-                <option value="1">RH</option>
-                <option value="2">TI</option>
-                <option value="3">Administração</option>
-            </datalist>
-            <button class="excluir"><img src="../img/Icons/delete.svg" class="icones"></button>
-            <button class="cancelar">Cancelar</button>
-            <button class="confirmar">Confirmar</button>
-        </form>
-    </section>
+                <div class="setores">
+                    <input type="text" id="inputSetor" placeholder="Adicionar Setores" list="setor">
+                    <datalist id="setor">
+                        <option value=""></option>
+                        <option value="RH"></option>
+                        <option value="TI"></option>
+                        <option value="Administração"></option>
+                    </datalist>
+                    <button type="button" class="adicionarSetor">Adicionar Setor</button>
+
+                </div>
+                <ul id="listaSetores">
+                </ul>
+
+                <div class="botoes">
+                    <button type="reset" class="excluir"></button>
+                    <a href="./paginaInicial.html"><button type="button" class="cancelar">Cancelar</button></a>
+                    <button class="confirmar">Confirmar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="../js/publicacao.js"></script>
 </body>
 
 </html>

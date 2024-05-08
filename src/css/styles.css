@@ -1,15 +1,76 @@
 @import url(/src/css/reset.css);
 
-:root{
-    --color-transparente:#ffffff00;
-    --color-branco:#ffffff;
+:root {
+    --color-transparente: #ffffff00;
+    --color-branco: #ffffff;
     --color-fundo: #F5F5F5;
     --color-cancelar: #A52502;
     --color-verde-claro: #0FC2C0;
     --color-verde-medio: #0CABAB;
-    --color-verde-intermediario:#008F8C;
-    --color-verde-escuro:#015958;
+    --color-verde-intermediario: #008F8C;
+    --color-verde-escuro: #015958;
 }
-body{
+
+body {
     background-color: var(--color-fundo);
+}
+
+/* Cabeçalho */
+.menuSuperior {
+    height: 60px;
+    width: initial;
+    display: flex;
+    margin: 30px 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li {
+    margin: 0px 10px;
+}
+
+.menu li p {
+    background-color: var(--color-branco);
+    padding: 10px;
+}
+
+.menuLateral {
+    margin-top: 10px;
+}
+
+.icones {
+    padding: 10px;
+    height: 45px;
+    width: 45px;
+}
+
+
+/* Botões */
+
+.excluir {
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    background-image: url('../img/Icons/delete.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cancelar {
+    background-color: var(--color-cancelar);
+    height: 40px;
+    width: 150px;
+    margin: 10px;
+}
+
+.confirmar {
+    background-color: var(--color-verde-intermediario);
+    height: 40px;
+    width: 150px;
 }

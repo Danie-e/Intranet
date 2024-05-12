@@ -1,20 +1,67 @@
-// import { procurarUsuario } from 'db.js';
+var usuarios = [
+    {
+        "_id": {
+            "$oid": "6633d7eace7caf61e75d450c"
+        },
+        "nome": "Admin",
+        "senha": "Admin",
+        "equipe": "RH",
+        "tipo": 1
+    }, {
+        "_id": {
+            "$oid": "663fcbac94b546e3d426573b"
+        },
+        "nome": "TesteRH",
+        "senha": "Admin",
+        "equipe": "RH",
+        "tipo": 1
+    }, {
+        "_id": {
+            "$oid": "663fcc0b94b546e3d426573d"
+        },
+        "nome": "TesteGerente",
+        "senha": "Admin",
+        "equipe": "Gerente",
+        "tipo": 2
+    }, {
+        "_id": {
+            "$oid": "663fcc1a94b546e3d426573f"
+        },
+        "nome": "TesteUsuario",
+        "senha": "Admin",
+        "equipe": "Usuario",
+        "tipo": 3
+    }
+]
 
-// async function validarUsuario() {
-//   let usuario = document.getElementById('usuario').value;
-//   let senha = document.getElementById('senha').value;
-
-//   let resultado = procurarUsuario(usuario, senha);
-//   if (resultado) {
-//     window.location.href = "./src/html/paginaInicial.html";
-//   }
-//   else {
-//     console.log("Senha ou usuario incorretos")
-//   }
-
+// function validarUsuario() {
+//     let nomeUsuario = document.getElementById('usuario').value;
+//     let senhaUsuario = document.getElementById('senha').value;
+//     if (usuarios.find(e => {e.nome == nomeUsuario && e.senha == senhaUsuario})) {
+//         window.location.href = 'html/paginaInicial.html'
+//     }
+//     else {
+//         document.getElementById('mensagem').value = "Senha ou usuario não encontados";
+//         nomeUsuario.value = '';
+//         senhaUsuario.value = '';
+//     }
 // }
 
-function irpara(){
-  window.location.href='html/paginaInicial.html'
-}
+function validarUsuario() {
+    let nomeUsuario = document.getElementById('usuario').value;
+    let senhaUsuario = document.getElementById('senha').value;
 
+    // Procura por uma correspondência
+    var pessoaEncontrada = usuarios.find(function (pessoa) {
+        return pessoa.nome === nomeUsuario && pessoa.senha === senhaUsuario;
+    });
+
+    if (pessoaEncontrada) {
+        window.open("./html/paginaInicial.html");
+        // window.location.href = '../src/html/paginaInicial.html';
+    } else {
+        var novoTexto = "Senha ou usuario não encontados";
+        return document.getElementById("mensagem").innerHTML = novoTexto;
+    }
+
+}

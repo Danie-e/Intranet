@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intraverso</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
@@ -15,18 +15,37 @@
             <br>
             <h3>Transformando relações internas</h3>
 
-            <form class="formulario" action="" method="post">
+            <form class="formulario" onsubmit="validarUsuario()">
                 <label> Usuario:</label>
                 <input type="text" name="nome" alt="Digite seu usuario" class="inputPadrao" id="usuario" required>
                 <label> Senha:</label>
                 <input type="password" name="senha" alt="Digite sua senha" class="inputPadrao" id="senha" required>
-                <button type="button" placeholder="Login" alt="Click para ralizar o login" class="botaoLogin" onclick="irpara()">
+                <p style="margin: 0px; color: (var--color-verde-escuro) ; font-style: italic;">Somente usuarios cadastrados</p>
+                <button type="submit" placeholder="Login" alt="Click para ralizar o login" class="botaoLogin">
                     Login
                 </button>
-                <p style="color: red; font-size: 11px;">Realizando integração com o banco de dados, entre com qualquer valor de senha e usuario</p>
             </form>
+            <div class=" descricaoParagrafo">
+                <p>O IntraVerso se trata de uma intranet com funções focadas em auxiliar a comunicação da empresa, e o
+                    desenvolvimento dos funcionários.</p>
+                <p>O IntraVerso tem como objetivo facilitar a comunicação da organização com seus funcionários, criando
+                    um espaço que centralize as informações importantes para os funcionários, podendo setorizar ou
+                    distribuir a todos da empresa os comunicados, criando assim um ambiente distinto dos que seguem as
+                    informações formais relacionadas ao trabalho individual, sem gerar a sobrecarga de informação. </p>
+            </div>
+            <p style="color: red; font-size: 11px;" id="mensagem"> </p>
         </div>
-        <img src="/src/img/empresas.jpg" class="imagem_login">
+        <div class="imagem_login">
+            <div class="descricao ">
+                <p>O IntraVerso se trata de uma intranet com funções focadas em auxiliar a comunicação da empresa, e o
+                    desenvolvimento dos funcionários.</p>
+                <p>O IntraVerso tem como objetivo facilitar a comunicação da organização com seus funcionários, criando
+                    um espaço que centralize as informações importantes para os funcionários, podendo setorizar ou
+                    distribuir a todos da empresa os comunicados, criando assim um ambiente distinto dos que seguem as
+                    informações formais relacionadas ao trabalho individual, sem gerar a sobrecarga de informação. </p>
+            </div>
+        </div>
+        <!-- <img src="./img/empresas.jpg" class="imagem_login"> -->
 
     </section>
     <script src="js/login.js"></script>

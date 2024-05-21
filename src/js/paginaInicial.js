@@ -1,5 +1,8 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+    const result = await fetch("http://localhost:3000/publicacao")
+
+    const publicacoes = await result.json();
     publicacoes.forEach(element => {
 
         document.getElementById('paginaInicialPublicacoes').innerHTML +=
@@ -23,5 +26,4 @@ document.addEventListener("DOMContentLoaded", function () {
         `
 
     });
-    publicacoes
 })

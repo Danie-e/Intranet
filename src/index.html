@@ -15,13 +15,15 @@
             <br>
             <h3>Transformando relações internas</h3>
 
-            <form class="formulario" onsubmit="validarUsuario()">
+            <form class="formulario">
                 <label> Usuario:</label>
                 <input type="text" name="nome" alt="Digite seu usuario" class="inputPadrao" id="usuario" required>
                 <label> Senha:</label>
                 <input type="password" name="senha" alt="Digite sua senha" class="inputPadrao" id="senha" required>
-                <p style="margin: 0px; color: (var--color-verde-escuro) ; font-style: italic;">Somente usuarios cadastrados</p>
-                <button type="submit" placeholder="Login" alt="Click para ralizar o login" class="botaoLogin">
+                <p style="margin: 0px; color: (var--color-verde-escuro) ; font-style: italic;">Somente usuarios
+                    cadastrados</p>
+                <button type="button" placeholder="Login" alt="Click para ralizar o login" class="botaoLogin"
+                    onclick="validarUsuario()">
                     Login
                 </button>
             </form>
@@ -33,7 +35,7 @@
                     distribuir a todos da empresa os comunicados, criando assim um ambiente distinto dos que seguem as
                     informações formais relacionadas ao trabalho individual, sem gerar a sobrecarga de informação. </p>
             </div>
-            <p style="color: red; font-size: 11px;" id="mensagem"> </p>
+            <p style="color: red; font-size: 12px;" id="mensagem"> </p>
         </div>
         <div class="imagem_login">
             <div class="descricao ">

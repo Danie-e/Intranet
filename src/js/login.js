@@ -1,38 +1,3 @@
-var usuarios = [
-    {
-        "_id": {
-            "$oid": "6633d7eace7caf61e75d450c"
-        },
-        "nome": "Admin",
-        "senha": "Admin",
-        "equipe": "RH",
-        "tipo": 1
-    }, {
-        "_id": {
-            "$oid": "663fcbac94b546e3d426573b"
-        },
-        "nome": "TesteRH",
-        "senha": "Admin",
-        "equipe": "RH",
-        "tipo": 1
-    }, {
-        "_id": {
-            "$oid": "663fcc0b94b546e3d426573d"
-        },
-        "nome": "TesteGerente",
-        "senha": "Admin",
-        "equipe": "Gerente",
-        "tipo": 2
-    }, {
-        "_id": {
-            "$oid": "663fcc1a94b546e3d426573f"
-        },
-        "nome": "TesteUsuario",
-        "senha": "Admin",
-        "equipe": "Usuario",
-        "tipo": 3
-    }
-]
 
 // function validarUsuario() {
 //     let nomeUsuario = document.getElementById('usuario').value;
@@ -46,22 +11,25 @@ var usuarios = [
 //         senhaUsuario.value = '';
 //     }
 // }
+// document.addEventListener(fetch)
 
-function validarUsuario() {
-    let nomeUsuario = document.getElementById('usuario').value;
-    let senhaUsuario = document.getElementById('senha').value;
+async function validarUsuario() {
+    const result = await fetch("http://localhost:3000/usuarios")
+    console.log(result);
+    const usuarios = await result.json();
+    let nomeUsuario = document.getElementById('usuario');
+    let senhaUsuario = document.getElementById('senha');
 
-    // Procura por uma correspondência
-    var pessoaEncontrada = usuarios.find(function (pessoa) {
-        return pessoa.nome === nomeUsuario && pessoa.senha === senhaUsuario;
-    });
+    var index = usuarios.findIndex(x => x.nome == nomeUsuario.value && x.senha == senhaUsuario.value)
 
-    if (pessoaEncontrada) {
-        window.open("./html/paginaInicial.html");
-        // window.location.href = '../src/html/paginaInicial.html';
+    if (index > 0) {
+        // window.open("./html/paginaInicial.html");
+        window.location.href = './html/paginaInicial.html';
     } else {
         var novoTexto = "Senha ou usuario não encontados";
-        return document.getElementById("mensagem").innerHTML = novoTexto;
+        nomeUsuario.value = "";
+        senhaUsuario.value = ""
+        document.getElementById("mensagem").innerHTML = novoTexto;
     }
 
 }

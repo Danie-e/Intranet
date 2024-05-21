@@ -1,26 +1,3 @@
- var publicacoes = [
-    {
-        "_id": {
-            "$oid": "663fdc4ad1ca8282df7bce83"
-        },
-        "titulo": "Publicação teste",
-        "descricao": "Teste descrição de publicação",
-        "autor": {
-            "nome": "Admin",
-            "senha": "Admin",
-            "equipe": "RH",
-            "tipo": 1,
-            "_id": {
-                "$oid": "6633d7eace7caf61e75d450c"
-            }
-        },
-        "imagem": "",
-        "texto": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum urna eget accumsan placerat. Ut sed massa placerat lorem mattis pellentesque. Pellentesque laoreet euismod nisl sit amet mattis. Sed posuere velit purus, dignissim interdum tellus iaculis sed. Ut diam metus, pretium a volutpat sit amet, suscipit quis justo. Donec et.",
-        "categorias": "TI"
-    }
-]
-
-
 var categoria='';
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -51,15 +28,15 @@ function salvarPublicacao() {
     var imagem = document.getElementById('imagemPublicacao').value;
     var texto = document.getElementById('textoPublicacao').value;
 
-    publicacoes += {
+    var publicacoes = {
         titulo:titulo,
         descricao:descricao,
-        autor:autor,
+        autor:"663fcbac94b546e3d426573b",
         imagem:imagem,
         texto:texto,
         categorias: categoria
     }
     alert("Publicação criada com sucesso!");
-
+    fetch("http://localhost:3000/publicacao",{method:"POST", body:JSON.stringify(publicacoes)})
     window.open("./paginaInicial.html");
 }

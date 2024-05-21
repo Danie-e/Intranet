@@ -2,10 +2,8 @@
 
 ## Instalação do Site
 
-O site em HTML/CSS/JS é um projeto estático, logo pode ser utilizado tanto em servidores...
+>Apos baixar e descompactar a pasta src, execute o terminal de comando no diretorio em que os arquivos estão armazenados e digite `npm install` para baixar as dependecias do projeto e em seguida `npm run dev` para iniciar o servidor que ativara a API fazendo a conexão com o banco de dados.
+>
+>Abra o visual studio pelo terminal digitando o comando `code .` ou abrindo normalmente pelo explorador de arquivos para realizar as alteraçôes nos codigos.
 
-## Histórico de versões
-
-### [0.1.0] - DD/MM/AAAA
-#### Adicionado
-- Adicionado ...
+Apos realizado estes passo é possivel realizar as requisiçoes para buscar, inserir, atualizar e deletar arquivos do banco de dados. 

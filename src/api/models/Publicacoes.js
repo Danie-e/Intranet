@@ -6,6 +6,7 @@ const publicacaoSchema = new mongoose.Schema({
     titulo: { type: String, required: true },
     descricao: { type: String },
     autor: usuariosSchema,
+    data: {type:Date},
     imagem: { type: String },
     texto: { type: String, require: true },
     categorias: { type: String, require: true },

@@ -1,4 +1,4 @@
-var categoria='';
+var categoria = '';
 
 document.addEventListener("DOMContentLoaded", function () {
     var adicionarSetorBtn = document.querySelector(".adicionarSetor");
@@ -21,22 +21,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function salvarPublicacao() {
+async function salvarPublicacao() {
     var titulo = document.getElementById('tituloPublicacao').value;
     var descricao = document.getElementById('resumoPublicacao').value;
-    var autor = "Em desenvolvimento"
+    var autor = "663fcbac94b546e3d426573b"
     var imagem = document.getElementById('imagemPublicacao').value;
     var texto = document.getElementById('textoPublicacao').value;
 
     var publicacoes = {
-        titulo:titulo,
-        descricao:descricao,
-        autor:"663fcbac94b546e3d426573b",
-        imagem:imagem,
-        texto:texto,
+        titulo: titulo,
+        descricao: descricao,
+        autor: autor,
+        imagem: imagem,
+        texto: texto,
         categorias: categoria
     }
-    alert("Publicação criada com sucesso!");
-    fetch("http://localhost:3000/publicacao",{method:"POST", body:JSON.stringify(publicacoes)})
-    window.open("./paginaInicial.html");
+    // alert(JSON.stringify(publicacoes));
+    const result = await fetch("http://localhost:3000/publicacao", {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(publicacoes)
+    })
+    alert(result.json());
+    if (result.status==200) {
+        alert("Publicação criada com sucesso!");
+        window.open("./paginaInicial.html");
+    }
+    else {
+        alert("Não foi possivel criar publicação!");
+    }
 }

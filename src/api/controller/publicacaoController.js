@@ -31,10 +31,9 @@ class PublicacaoController {
 
         try {
             const autorPublicacao = await usuarios.findById(novaPublicacao.autor);
-            const cadastroPublicacao = { ...novaPublicacao, autor: { ...autorPublicacao.
-                _doc } };
+            console.log(autorPublicacao._doc );
+            const cadastroPublicacao = { ...novaPublicacao, autor: { ...autorPublicacao._doc }, data:Date() };
             const publicacaoCadastrada =await publicacoes.create(cadastroPublicacao);
-            
             res.status(201).json({ message: "Criado com sucesso", publicacoes: publicacaoCadastrada });
         }
         catch (erro) {

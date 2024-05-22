@@ -9,6 +9,4 @@ routes.post("/publicacao", PublicacaoController.cadastrarPublicacao);
 routes.put("/publicacao/:id", PublicacaoController.atualizarPublicacao);
 routes.delete("/publicacao/:id", PublicacaoController.excluirPublicacao);
 
-
-
 export default routes;

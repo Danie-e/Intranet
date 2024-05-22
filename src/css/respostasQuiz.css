@@ -1,0 +1,50 @@
+@import url(/src/css/styles.css);
+
+body{
+    height: 1vh;
+}
+
+.botaoSelecao{
+    width: 35px;
+    height: 35px;
+    margin-left: 65px;
+    margin-bottom: 20px;
+    border-radius: 100px;
+    background-color: white;
+}
+
+.botaoSelecao:hover{
+    background-color: lightgrey;
+}
+
+#imagemQuiz{
+    background-color: gray;
+    text-align: center;
+    width: 1000px;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#textoPergunta{
+    text-align: center;
+}
+
+#espacoBotaoQuiz{
+    margin: auto;
+    width: 1050px;
+    text-align: center;
+}
+
+.botaoQuiz{
+    margin: auto;
+    width: 490px;
+    height: 100px;
+    margin:10px 5px 10px 5px;
+    background-color: white;
+}
+
+.botaoQuiz:hover{
+    background-color: lightgray;
+}

@@ -1,20 +1,35 @@
-// import { procurarUsuario } from 'db.js';
 
-// async function validarUsuario() {
-//   let usuario = document.getElementById('usuario').value;
-//   let senha = document.getElementById('senha').value;
-
-//   let resultado = procurarUsuario(usuario, senha);
-//   if (resultado) {
-//     window.location.href = "./src/html/paginaInicial.html";
-//   }
-//   else {
-//     console.log("Senha ou usuario incorretos")
-//   }
-
+// function validarUsuario() {
+//     let nomeUsuario = document.getElementById('usuario').value;
+//     let senhaUsuario = document.getElementById('senha').value;
+//     if (usuarios.find(e => {e.nome == nomeUsuario && e.senha == senhaUsuario})) {
+//         window.location.href = 'html/paginaInicial.html'
+//     }
+//     else {
+//         document.getElementById('mensagem').value = "Senha ou usuario não encontados";
+//         nomeUsuario.value = '';
+//         senhaUsuario.value = '';
+//     }
 // }
+// document.addEventListener(fetch)
 
-function irpara(){
-  window.location.href='html/paginaInicial.html'
+async function validarUsuario() {
+    const result = await fetch("http://localhost:3000/usuarios")
+    console.log(result);
+    const usuarios = await result.json();
+    let nomeUsuario = document.getElementById('usuario');
+    let senhaUsuario = document.getElementById('senha');
+
+    var index = usuarios.findIndex(x => x.nome == nomeUsuario.value && x.senha == senhaUsuario.value)
+
+    if (index > 0) {
+        // window.open("./html/paginaInicial.html");
+        window.location.href = './html/paginaInicial.html';
+    } else {
+        var novoTexto = "Senha ou usuario não encontados";
+        nomeUsuario.value = "";
+        senhaUsuario.value = ""
+        document.getElementById("mensagem").innerHTML = novoTexto;
+    }
+
 }
-

@@ -1,4 +1,4 @@
-@import url(/src/css/reset.css);
+@import url(./reset.css);
 
 :root {
     --color-transparente: #ffffff00;
@@ -51,7 +51,15 @@ body {
 
 
 /* Botões */
-
+.favoritar {
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    background-image: url('../img/Icons/favorite.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .excluir {
     height: 30px;
     width: 30px;

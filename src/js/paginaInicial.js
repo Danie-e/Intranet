@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         document.getElementById('paginaInicialPublicacoes').innerHTML +=
             `
-            <div class="publicacao">
+            <div class="publicacao" id="${element._id}">
                 <img src="../img/Icons/account_circle.svg">
                 <div class="card">
                     <h3 class="tituloCard">${element.titulo}</h2>
@@ -26,4 +26,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         `
 
     });
-})
+});
+
+async function irParaPublicacao() {
+    alert(evento);
+    window.location.href = './html/publicacao.html';
+
+}
+ 
+el = document.getElementById('paginaInicialPublicacoesvar');
+el.addEventListener('click', function(e) {
+    alert(e.target.id);
+});

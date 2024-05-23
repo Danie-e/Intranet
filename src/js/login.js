@@ -1,18 +1,4 @@
 
-// function validarUsuario() {
-//     let nomeUsuario = document.getElementById('usuario').value;
-//     let senhaUsuario = document.getElementById('senha').value;
-//     if (usuarios.find(e => {e.nome == nomeUsuario && e.senha == senhaUsuario})) {
-//         window.location.href = 'html/paginaInicial.html'
-//     }
-//     else {
-//         document.getElementById('mensagem').value = "Senha ou usuario não encontados";
-//         nomeUsuario.value = '';
-//         senhaUsuario.value = '';
-//     }
-// }
-// document.addEventListener(fetch)
-
 async function validarUsuario() {
     const result = await fetch("http://localhost:3000/usuarios")
     console.log(result);

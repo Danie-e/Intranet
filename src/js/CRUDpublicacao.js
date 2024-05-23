@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-async function salvarPublicacao() {
+async function salvarPublicacao(evento) {
+    evento.preventDefault();
     var titulo = document.getElementById('tituloPublicacao').value;
     var descricao = document.getElementById('resumoPublicacao').value;
     var autor = "663fcbac94b546e3d426573b"
@@ -43,13 +44,15 @@ async function salvarPublicacao() {
             "Content-type": "application/json"
         },
         body: JSON.stringify(publicacoes)
-    })
-    alert(result.json());
-    if (result.status==200) {
+    });
+    if (result.ok) {
         alert("Publicação criada com sucesso!");
-        window.open("./paginaInicial.html");
+        window.location.href = './paginaInicial.html';
     }
     else {
         alert("Não foi possivel criar publicação!");
     }
 }
+
+const formulario = document.getElementById("formPublicacao");
+formulario.addEventListener("submit", evento => salvarPublicacao(evento));

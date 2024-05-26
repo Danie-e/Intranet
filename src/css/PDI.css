@@ -1,0 +1,69 @@
+@import url(styles.css);
+
+.cabecalho{
+    background: #1C8394;
+    display: flex;
+    padding: 25px;
+    margin: 30px;
+    border: 20px;
+    justify-content: space-between;
+    text-align:justify;
+}
+
+.botoes {
+    background-color: white;
+    margin: auto;
+    width: 100px;
+    padding: 10px;
+}
+
+.pdi{
+    background: #1C8394;
+    margin: 30px;
+    padding: 30px;
+}
+
+.titulo {
+    padding: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo span {
+    font-size: 25px;
+}
+
+.todasTarefas {
+
+}
+
+.tarefa {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodape {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodape p {
+    font-size: 20px;
+}
+
+.botoesRodape {
+    text-align: center;
+}
+
+.rodape img {
+    border-radius: 20%;
+    height: 30px;
+}
+
+.rodape button {
+    border-radius: 20%;
+}
+

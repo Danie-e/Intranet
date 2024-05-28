@@ -9,6 +9,4 @@ menu.addEventListener('click',function(){
     else{
         container.style.display ='flex';
     }
-
-    
 })

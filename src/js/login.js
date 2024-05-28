@@ -9,7 +9,7 @@ async function validarUsuario() {
     var index = usuarios.findIndex(x => x.nome == nomeUsuario.value && x.senha == senhaUsuario.value)
 
     if (index > 0) {
-        // window.open("./html/paginaInicial.html");
+        document.cookie = `id=${usuarios[index]._id}`;
         window.location.href = './html/paginaInicial.html';
     } else {
         var novoTexto = "Senha ou usuario não encontados";

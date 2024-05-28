@@ -1,5 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
+    carregarTodasPublicacaoes();
+});
+
+async function carregarTodasPublicacaoes() {
     const result = await fetch("http://localhost:3000/publicacao")
 
     const publicacoes = await result.json();
@@ -9,10 +13,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         const arrayCategorias = categorias.split(' ');
         var listaCategorias = '';
         arrayCategorias.forEach(elemento => {
-            listaCategorias += ` <li> ${elemento} </li> `
+            listaCategorias +=
+                `<li>
+                ${elemento}
+            </li> `
         });
 
-        document.getElementById('paginaInicialPublicacoes').innerHTML += `
+        document.getElementById('EdicaoPublicacoes').innerHTML +=
+            `
             <div class="card" id="${element._id}">
                 <img src="../img/Icons/account_circle.svg">
                 <div class="publicacao">
@@ -22,14 +30,29 @@ document.addEventListener("DOMContentLoaded", async function () {
                             <ul id="categorias">
                                ${listaCategorias}
                             </ul>
-                            <button class="favoritar"></button>
+                            <div>
+                            <button class="deletar" onclick="deletarPublicacao()"></button>
+                            <button class="editar"  onclick="editarPublicacao()"></button>
+                            </div>
+                            
                         </div>
                 </div>
-            </div> `
-    });
-});
+            </div>
 
-var card = document.getElementById('paginaInicialPublicacoes');
+        `
+
+    });
+}
+
+
+function deletarPublicacao() {
+    document.preventDefault();
+    alert("publicação deletada")
+}
+
+function editarPublicacao() { alert("publicação editada") }
+
+var card = document.getElementById('EdicaoPublicacoes');
 card.onclick = function (elemento) {
     window.location.href = 'publicacao.html';
     document.cookie = `idPublicacao=${elemento.target.id}; path=/`;

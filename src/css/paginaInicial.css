@@ -1,4 +1,5 @@
 @import url(./styles.css);
+@import url(./card.css);
 
 .logo {
     height: 45px;
@@ -6,7 +7,7 @@
 }
 
 .menu_completo {
-    display: inline-block;
+    display: block;
     flex-direction: column;
 }
 
@@ -18,50 +19,4 @@
 
 #menu_superior {
     display: none;
-}
-
-.publicacao{
-    margin: 2% 2% 2% 5%;
-    border-style: double;
-    /* border-width: 1px;
-    border-color: black; */
-    display: block;
-    align-items: baseline;
-    justify-content: center;
-}
-
-.card {
-    margin: 1% 1% 1% 1%;
-    border-style: double;
-    /* border-width: 1px; */
-    border-radius: 0px 10px 10px;
-    background-color: var(--color-branco);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.descricaoCard {
-    max-width: 90%;
-    min-height: 100px;
-    max-height: max-content;
-    align-content: center;
-}
-
-.favoritoCategorias {
-    display: flex;
-    width: 90%;
-    margin: 10px 0px;
-    max-height: min-content;
-    /* max-width: max-content; */
-    align-content: center;
-    justify-content: space-between;
-}
-
-.favoritoCategorias ul {
-    display: flex;
-    max-width: min-content;
-}
-
-.favoritoCategorias ul li{
-    margin: 0px 10px 0px 0px;
 }

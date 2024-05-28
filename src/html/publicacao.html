@@ -4,10 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/paginaInicial.css">
-    <title id="titulo-publicacao">Pagina Inicial</title>
+    <link rel="stylesheet" href="../css/publicacao.css">
+    <title id="tituloPagina"></title>
 </head>
+
 <body>
-    
+
+    <section class="menuSuperior">
+        <ul class="menu">
+            <li>
+                <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones">
+            </li>
+            <li>
+                <p>Favoritos</p>
+            </li>
+            <li>
+                <p>Pesquisas</p>
+            </li>
+            <li>
+                <p>Quizzes</p>
+            </li>
+            <li>
+                <p>PDI's</p>
+            </li>
+
+        </ul>
+        <ul class="menu">
+            <li>
+                <img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa">
+            </li>
+            <li>
+                <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
+            </li>
+        </ul>
+
+    </section>
+
+    <main>
+        <section class="publicacao">
+            <h1 id="titulo"></h1>
+            <p id="descricao">
+            </p>
+
+            <div class="UsuarioDataPublicacao">
+                <div>
+                    <img>
+                    <p id="nomeAutor"></p>
+                </div>
+                <p id="dataPublicacao"></p>
+            </div>
+
+            <img>
+            <p id="texto">
+            </p>
+           
+            <ul id="categorias">
+            </ul>
+        </section>
+    </main>
+
+    <!-- <script src="../js/padrao.js"></script> -->
+    <script src="../js/publicacao.js" type="module"></script>
+
 </body>
+
 </html>

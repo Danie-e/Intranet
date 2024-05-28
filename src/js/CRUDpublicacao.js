@@ -1,4 +1,4 @@
-var categoria = '';
+var categoria='';
 
 document.addEventListener("DOMContentLoaded", function () {
     var adicionarSetorBtn = document.querySelector(".adicionarSetor");
@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
             listaSetores.appendChild(novoItem);
             inputSetor.value = ""; // Limpar o campo de input após adicionar o setor
 
-            categoria += setor;
+            categoria+= setor+" ";
+            console.log(categoria);
         } else {
             alert("Por favor, insira um setor válido.");
         }

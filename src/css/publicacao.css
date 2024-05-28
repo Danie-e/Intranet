@@ -1,0 +1,31 @@
+@import url(styles.css);
+@import url(CRUDpublicacao.css);
+
+main{
+    width: 50%;
+}
+
+.publicacao{
+    display:block;
+    width: 90%;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.UsuarioDataPublicacao{
+    display: flex;
+    justify-content: space-between ;
+}
+
+ul{
+    display: flex;
+}
+
+#categorias li {
+    padding: 10px;
+    margin: 10px;
+    background-color: var( --color-verde-medio);
+}

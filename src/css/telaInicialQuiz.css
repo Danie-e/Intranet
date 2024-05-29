@@ -1,7 +1,7 @@
-@import url(/src/css/styles.css);
+@import url(/css/styles.css);
 
 #telaInicialQuiz {
-    background-color: grey;
+    background-color: #D9D9D9;
     width: 1300px;
     height: 600px;
     margin: auto;
@@ -30,11 +30,16 @@
     background-color: #A52502;
     width: 150px;
     height: 75px;
-    border-radius: 10px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
 }
 
 #areaBotoes #botaoIniciar {
     background-color: #1C8394;
     width: 150px;
     height: 75px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
 }

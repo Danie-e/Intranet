@@ -1,0 +1,40 @@
+@import url(/src/css/styles.css);
+
+#telaInicialQuiz {
+    background-color: grey;
+    width: 1300px;
+    height: 600px;
+    margin: auto;
+}
+
+#areaTexto {
+    height: 50%;
+    text-align: center;
+}
+
+#areaTexto h1 {
+    padding-top:150px;
+}
+
+#areaBotoes {
+    height: 50%;
+    text-align: center;
+    padding-top:150px;
+}
+
+#areaBotoes button {
+    margin:0px 100px 0px 100px;
+}
+
+#areaBotoes #botaoVoltar {
+    background-color: #A52502;
+    width: 150px;
+    height: 75px;
+    border-radius: 10px;
+}
+
+#areaBotoes #botaoIniciar {
+    background-color: #1C8394;
+    width: 150px;
+    height: 75px;
+}

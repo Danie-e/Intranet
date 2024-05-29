@@ -29,20 +29,22 @@ class PDIController {
 
         try {
             // Verificar se o autor existe
-            const autorPDI = await usuarios.findById(novoPDI.autor);
-            if (!autorPDI) {
-                return res.status(404).json({ message: "Autor não encontrado." });
-            }
+
+            // const autorPDI = await usuarios.findById(novoPDI.autor);
+            // if (!autorPDI) {
+            //     return res.status(404).json({ message: "Autor não encontrado." });
+            // }
 
             // Montar objeto para cadastro
-            const cadastroPDI = {
-                ...novoPDI,
-                autor: { ...autorPDI._doc },
-                data: Date(),
-            };
+            // const cadastroPDI = {
+            //     ...novoPDI,
+            //     autor: { ...autorPDI._doc },
+            //     data: Date(),
+            // };
 
             // Criar o PDI
-            const pdiCriado = await pdi.create(cadastroPDI);
+            // const pdiCriado = await pdi.create(cadastroPDI);
+            const pdiCriado = await pdi.create(novoPDI);
             res.status(201).json({ message: "Criado com sucesso", pdi: pdiCriado });
         } catch (error) {
             res.status(500).json({ message: `${error.message} - Falha ao cadastrar PDI.` });

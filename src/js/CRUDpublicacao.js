@@ -1,59 +1,75 @@
-var categoria='';
 
-document.addEventListener("DOMContentLoaded", function () {
-    var adicionarSetorBtn = document.querySelector(".adicionarSetor");
-    var inputSetor = document.getElementById("inputSetor");
-    var listaSetores = document.getElementById("listaSetores");
-
-    adicionarSetorBtn.addEventListener("click", function () {
-        var setor = inputSetor.value.trim();
-        if (setor !== "") {
-            var novoItem = document.createElement("li");
-            novoItem.textContent = setor;
-            listaSetores.appendChild(novoItem);
-            inputSetor.value = ""; // Limpar o campo de input após adicionar o setor
-
-            categoria+= setor+" ";
-            console.log(categoria);
-        } else {
-            alert("Por favor, insira um setor válido.");
-        }
-    });
+document.addEventListener("DOMContentLoaded", async function () {
+    carregarTodasPublicacaoes();
 });
 
+async function carregarTodasPublicacaoes() {
+    const result = await fetch("http://localhost:3000/publicacao")
 
-async function salvarPublicacao(evento) {
-    evento.preventDefault();
-    var titulo = document.getElementById('tituloPublicacao').value;
-    var descricao = document.getElementById('resumoPublicacao').value;
-    var autor = "663fcbac94b546e3d426573b"
-    var imagem = document.getElementById('imagemPublicacao').value;
-    var texto = document.getElementById('textoPublicacao').value;
+    const publicacoes = await result.json();
+    publicacoes.forEach(element => {
 
-    var publicacoes = {
-        titulo: titulo,
-        descricao: descricao,
-        autor: autor,
-        imagem: imagem,
-        texto: texto,
-        categorias: categoria
-    }
-    // alert(JSON.stringify(publicacoes));
-    const result = await fetch("http://localhost:3000/publicacao", {
-        method: "POST",
+        let categorias = `${element.categorias}`;
+        const arrayCategorias = categorias.split(' ');
+        var listaCategorias = '';
+        arrayCategorias.forEach(elemento => {
+            listaCategorias +=
+                `<li>
+                ${elemento}
+            </li> `
+        });
+
+        document.getElementById('EdicaoPublicacoes').innerHTML +=
+            `
+            <div class="card" id="${element._id}">
+                <img src="../img/Icons/account_circle.svg">
+                <div class="publicacao">
+                    <h3 class="tituloCard">${element.titulo}</h2>
+                        <p class="descricaoCard">${element.descricao}</p>
+                        <div class="favoritoCategorias">
+                            <ul id="categorias">
+                               ${listaCategorias}
+                            </ul>
+                            <div>
+                            <button class="deletar" onclick="deletarPublicacao('${element._id}')"></button>
+                            <button class="editar"  onclick="editarPublicacao('${element._id}')"></button>
+                            </div>
+                            
+                        </div>
+                </div>
+            </div>
+
+        `
+
+    });
+}
+
+async function deletarPublicacao(id) {
+    const result = await fetch(`http://localhost:3000/publicacao/${id}`, {
+        method: "DELETE",
         headers: {
             "Content-type": "application/json"
-        },
-        body: JSON.stringify(publicacoes)
+        }
     });
-    if (result.ok) {
-        alert("Publicação criada com sucesso!");
-        window.location.href = './paginaInicial.html';
-    }
+    const resultado = await result.json();
+    if (resultado.ok)
+        alert(`${resultado.message} `);
+
     else {
-        alert("Não foi possivel criar publicação!");
+        alert(`${resultado.message} `);
+        window.location.href = 'paginaInicial.html';
     }
 }
 
-const formulario = document.getElementById("formPublicacao");
-formulario.addEventListener("submit", evento => salvarPublicacao(evento));
+function editarPublicacao(id) {
+    window.location.href = 'editarPublicacao.html';
+    document.cookie = `editarPublicacao = ${id}; path = /`;
+}
+
+
+var card = document.getElementById('EdicaoPublicacoes');
+card.onclick = function (elemento) {
+    if (elemento.target == "[object HTMLDivElement]")
+        window.location.href = 'publicacao.html';
+    document.cookie = `idPublicacao=${elemento.target.id}; path=/`;
+};

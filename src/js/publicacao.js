@@ -2,17 +2,17 @@ import { funcoes } from "./funcoes.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
     const idpublicacao = funcoes.acharCookie('idPublicacao=');
-    const dados = await procurarPublicacao(idpublicacao);
+    const dados = await funcoes.procurarPublicacao(idpublicacao);
     console.log(dados);
 
     let categorias = `${dados.categorias.trim()}`;
     const arrayCategorias = categorias.split(' ');
-    var listaCategorias='';
+    var listaCategorias = '';
     arrayCategorias.forEach(element => {
-        listaCategorias +=  `<li> ${element} </li> `
+        listaCategorias += `<li> ${element} </li> `
     });
 
-    const data= new Date(dados.data);
+    const data = new Date(dados.data);
 
     let tituloPagina = document.getElementById('tituloPagina');
     let titulo = document.getElementById('titulo');
@@ -28,12 +28,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     nomeAutor.innerHTML = `${dados.autor.nome}`;
     dataPublicacao.innerHTML = `${data.toLocaleDateString()}`;
     texto.innerHTML = `${dados.texto}`;
-    categoria.innerHTML=`${listaCategorias}`;
+    categoria.innerHTML = `${listaCategorias}`;
 });
-
-
-
-async function procurarPublicacao(id) {
-    const result = await fetch(`http://localhost:3000/publicacao/${id}`);
-    return result.json();
-}

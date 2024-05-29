@@ -78,6 +78,15 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.resetar {
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    background-image: url('../img/Icons/restart_alt.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 /* Botões */
 

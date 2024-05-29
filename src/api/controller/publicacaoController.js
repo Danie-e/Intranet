@@ -46,7 +46,7 @@ class PublicacaoController {
         try {
             const id = req.params.id;
             await publicacoes.findByIdAndUpdate(id, req.body);
-            res.status(200).json({ message: "Publicação foi atualizado." });
+            res.status(200).json({ message: "Publicação foi atualizado com sucesso." });
         }
         catch (erro) {
             res.status(500)

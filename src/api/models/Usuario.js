@@ -5,7 +5,8 @@ const usuariosSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   senha: { type: String },
   equipe: { type: String },
-  tipo: { type: Number }
+  tipo: { type: Number },
+  imagem: { type: String }
 }, { versionKey: false });
 
 const usuarios = mongoose.model("usuarios", usuariosSchema);

@@ -19,7 +19,6 @@ async function procurarPublicacao(id) {
 }
 
 async function deletarPublicacao(id) {
-    alert(id);
     const result = await fetch(`http://localhost:3000/publicacao/${id}`, {
         method: "DELETE",
         headers: {

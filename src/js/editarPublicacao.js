@@ -73,7 +73,7 @@ async function atualizarPublicacao(evento) {
         body: JSON.stringify(publicacoes)
     });
     const result = await resultado.json();
-    if (result.status= 200) {
+    if (result.status = 200) {
         alert(result.message);
         window.location.href = './paginaInicial.html';
     }
@@ -81,6 +81,11 @@ async function atualizarPublicacao(evento) {
         alert(result.message);
     }
 }
+
+const excluir = document.getElementById('excluirPublicacao');
+excluir.addEventListener("click", function () {
+    funcoes.deletarPublicacao(idpublicacao);
+});
 
 const formulario = document.getElementById("formPublicacao");
 formulario.addEventListener("submit", evento => atualizarPublicacao(evento));

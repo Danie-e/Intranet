@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/criarQuiz.css">
+        <title>Relatório Quizes</title>
+    </head>
+    <body>
+        <section class="menuSuperior">
+            <ul class="menu">
+                <li>
+                    <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones">
+                </li>
+                <li>
+                    <p>Favoritos</p>
+                </li>
+                <li>
+                    <p>Pesquisas</p>
+                </li>
+                <li>
+                    <p>Quizzes</p>
+                </li>
+                <li>
+                    <p>PDI's</p>
+                </li>
+    
+            </ul>
+            <ul class="menu">
+                <li>
+                    <img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa">
+                </li>
+                <li>
+                    <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
+                </li>
+            </ul>
+    
+        </section>
+
+        <main>
+            <div>
+                <input type="text" id="nomeQuiz" placeholder="Insira o nome do Quiz">
+            </div>
+            <div id="questao">
+                <h2>Questão 1</h2>
+                <label for="imagem" id="labelImagem">Insira aqui a Imagem</label>
+                <input type="file" accept="image/png" id="imagem" name="imagem">
+                <label for="textoQuestao" id="labelTextoQuestao">Insira aqui o texto da questão</label>
+                <input type="text" id="textoQuestao" name="textoQuestao">
+                <input type="checkbox" id="opcao" name="opcao">
+                <label for="opcao1" id="labelOpcao">Opção 1</label>
+                <input type="text" id="textoOpcao" placeholder="Insira aqui o texto da opção">
+                <input type="button" id="botaoAdicionarOpcao" value="+">
+            </div>
+            <div>
+                <input type="button" id="botaoAdicionarQuestao" value="+">
+            </div>
+
+        </main>
+    </body>
+</html>

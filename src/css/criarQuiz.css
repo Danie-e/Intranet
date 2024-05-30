@@ -1,0 +1,65 @@
+@import url(/css/styles.css);
+
+#nomeQuiz {
+    width: 1425px;
+    height: 35px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+}
+
+#labelImagem {
+    display: block;
+    margin: 30px 0px 10px 0px;
+}
+
+#imagem{
+    display: block;
+}
+
+#labelTextoQuestao {
+    display: block;
+    margin: 30px 0px 10px 0px;
+}
+
+#textoQuestao {
+    display: block;
+    width: 1410px;
+    height: 35px;
+    margin: auto;
+}
+
+#opcao {
+    margin: 30px 0px 30px 0px;
+    width: 15px;
+    height: 15px;
+}
+
+#labelOpcao {
+    padding: 5px;
+}
+
+#textoOpcao {
+    margin-right: 30px;
+}
+
+#botaoAdicionarOpcao {    
+    border-radius: 100%;
+    font-size: 15px;
+    background-color: white;
+}
+
+#botaoAdicionarQuestao {
+    display: block;
+    margin: auto;
+    width: 1435px;
+    height: 35px;
+    background-color: white;
+}
+
+#questao {
+    padding: 10px;
+    margin: 30px;
+    border: 1px solid black;
+}

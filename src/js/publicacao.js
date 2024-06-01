@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     const data = new Date(dados.data);
-    var img = dados.autor.imagem != "" ? dados.autor.imagem : "../img/Icons/account_circle.svg";
+    var img = dados.autor.imagem == "" ?  "../img/Icons/account_circle.svg": dados.autor.imagem ;
 
     const tituloPagina = document.getElementById('tituloPagina');
     const titulo = document.getElementById('titulo');
@@ -23,12 +23,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     const dataPublicacao = document.getElementById('dataPublicacao');
     const texto = document.getElementById('texto');
     const categoria = document.getElementById('categorias');
+    const imagemPublicacao = document.getElementById('imagemPublicacao');
 
 
     tituloPagina.innerHTML = `${dados.titulo}`;
     titulo.innerHTML = `${dados.titulo}`;
     descricao.innerHTML = `${dados.descricao}`;
     imagem.src = `${img}`;
+    imagemPublicacao.src=`${dados.imagem}`;
     nomeAutor.innerHTML = `${dados.autor.nome}`;
     dataPublicacao.innerHTML = `${data.toLocaleDateString()}`;
     texto.innerHTML = `${dados.texto}`;

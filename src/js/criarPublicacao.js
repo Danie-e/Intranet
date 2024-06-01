@@ -1,6 +1,7 @@
 import { funcoes } from "./funcoes.js";
 
 var categoria = '';
+var arquivoImagem;
 
 var adicionarSetorBtn = document.querySelector(".adicionarSetor");
 document.addEventListener("DOMContentLoaded", function () {
@@ -29,18 +30,18 @@ async function salvarPublicacao(evento) {
     var titulo = document.getElementById('tituloPublicacao').value;
     var descricao = document.getElementById('resumoPublicacao').value;
     var autor = funcoes.acharCookie("id=");
-    var imagem = document.getElementById('imagemPublicacao').value;
+    var imagem = document.getElementById('enviarImagem');
     var texto = document.getElementById('textoPublicacao').value;
 
     var publicacoes = {
         titulo: titulo,
         descricao: descricao,
         autor: autor,
-        imagem: imagem,
+        imagem: imagem.src,
         texto: texto,
         categorias: categoria
     }
-    alert(JSON.stringify(publicacoes));
+
     const result = await fetch("http://localhost:3000/publicacao", {
         method: "POST",
         headers: {
@@ -48,7 +49,7 @@ async function salvarPublicacao(evento) {
         },
         body: JSON.stringify(publicacoes)
     });
-    if (result.status==201) {
+    if (result.status == 201) {
         alert("Publicação criada com sucesso!");
         window.location.href = './paginaInicial.html';
     }
@@ -59,3 +60,19 @@ async function salvarPublicacao(evento) {
 
 const formulario = document.getElementById("formPublicacao");
 formulario.addEventListener("submit", evento => salvarPublicacao(evento));
+
+const imagem = document.getElementById('enviarImagem')
+const foto = document.getElementById('foto')
+foto.addEventListener("change", previewFile);
+
+function previewFile({ target }) {
+    const file = target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+        imagem.src = reader.result;
+        arquivoImagem = reader.result;
+    };
+}

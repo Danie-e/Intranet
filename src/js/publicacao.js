@@ -1,55 +1,32 @@
-var categoria = '';
+import { funcoes } from "./funcoes.js";
 
-document.addEventListener("DOMContentLoaded", function () {
-    var adicionarSetorBtn = document.querySelector(".adicionarSetor");
-    var inputSetor = document.getElementById("inputSetor");
-    var listaSetores = document.getElementById("listaSetores");
+document.addEventListener("DOMContentLoaded", async function () {
+    const idpublicacao = funcoes.acharCookie('idPublicacao=');
+    const dados = await funcoes.procurarPublicacao(idpublicacao);
+    console.log(dados);
 
-    adicionarSetorBtn.addEventListener("click", function () {
-        var setor = inputSetor.value.trim();
-        if (setor !== "") {
-            var novoItem = document.createElement("li");
-            novoItem.textContent = setor;
-            listaSetores.appendChild(novoItem);
-            inputSetor.value = ""; // Limpar o campo de input após adicionar o setor
-
-            categoria += setor;
-        } else {
-            alert("Por favor, insira um setor válido.");
-        }
+    let categorias = `${dados.categorias.trim()}`;
+    const arrayCategorias = categorias.split(' ');
+    var listaCategorias = '';
+    arrayCategorias.forEach(element => {
+        listaCategorias += `<li> ${element} </li> `
     });
+
+    const data = new Date(dados.data);
+
+    let tituloPagina = document.getElementById('tituloPagina');
+    let titulo = document.getElementById('titulo');
+    let descricao = document.getElementById('descricao');
+    let nomeAutor = document.getElementById('nomeAutor');
+    let dataPublicacao = document.getElementById('dataPublicacao');
+    let texto = document.getElementById('texto');
+    let categoria = document.getElementById('categorias');
+
+    tituloPagina.innerHTML = `${dados.titulo}`;
+    titulo.innerHTML = `${dados.titulo}`;
+    descricao.innerHTML = `${dados.descricao}`;
+    nomeAutor.innerHTML = `${dados.autor.nome}`;
+    dataPublicacao.innerHTML = `${data.toLocaleDateString()}`;
+    texto.innerHTML = `${dados.texto}`;
+    categoria.innerHTML = `${listaCategorias}`;
 });
-
-
-async function salvarPublicacao() {
-    var titulo = document.getElementById('tituloPublicacao').value;
-    var descricao = document.getElementById('resumoPublicacao').value;
-    var autor = "663fcbac94b546e3d426573b"
-    var imagem = document.getElementById('imagemPublicacao').value;
-    var texto = document.getElementById('textoPublicacao').value;
-
-    var publicacoes = {
-        titulo: titulo,
-        descricao: descricao,
-        autor: autor,
-        imagem: imagem,
-        texto: texto,
-        categorias: categoria
-    }
-    // alert(JSON.stringify(publicacoes));
-    const result = await fetch("http://localhost:3000/publicacao", {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json"
-        },
-        body: JSON.stringify(publicacoes)
-    })
-    alert(result.json());
-    if (result.status==200) {
-        alert("Publicação criada com sucesso!");
-        window.open("./paginaInicial.html");
-    }
-    else {
-        alert("Não foi possivel criar publicação!");
-    }
-}

@@ -5,25 +5,32 @@ document.addEventListener("DOMContentLoaded", async function () {
     const publicacoes = await result.json();
     publicacoes.forEach(element => {
 
-        document.getElementById('paginaInicialPublicacoes').innerHTML +=
-            `
-            <div class="publicacao">
+        let categorias = `${element.categorias}`;
+        const arrayCategorias = categorias.split(' ');
+        var listaCategorias = '';
+        arrayCategorias.forEach(elemento => {
+            listaCategorias += ` <li> ${elemento} </li> `
+        });
+
+        document.getElementById('paginaInicialPublicacoes').innerHTML += `
+            <div class="card" id="${element._id}">
                 <img src="../img/Icons/account_circle.svg">
-                <div class="card">
+                <div class="publicacao">
                     <h3 class="tituloCard">${element.titulo}</h2>
                         <p class="descricaoCard">${element.descricao}</p>
                         <div class="favoritoCategorias">
-                            <ul>
-                                <li>
-                                    ${element.categorias}
-                                </li>
+                            <ul id="categorias">
+                               ${listaCategorias}
                             </ul>
                             <button class="favoritar"></button>
                         </div>
                 </div>
-            </div>
-
-        `
-
+            </div> `
     });
-})
+});
+
+var card = document.getElementById('paginaInicialPublicacoes');
+card.onclick = function (elemento) {
+    window.location.href = 'publicacao.html';
+    document.cookie = `idPublicacao=${elemento.target.id}; path=/`;
+};

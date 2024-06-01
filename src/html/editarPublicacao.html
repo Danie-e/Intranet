@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="nomePublicacao">Intraverso</title>
+    <link rel="stylesheet" href="../css/CRUDpublicacao.css">
+</head>
+
+<body>
+    <section class="menuSuperior">
+        <ul class="menu">
+            <li>
+                <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones">
+            </li>
+            <li>
+                <p>Favoritos</p>
+            </li>
+            <li>
+                <p>Pesquisas</p>
+            </li>
+            <li>
+                <p>Quizzes</p>
+            </li>
+            <li>
+                <p>PDI's</p>
+            </li>
+
+        </ul>
+        <ul class="menu">
+            <li>
+                <img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa">
+            </li>
+            <li>
+                <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
+            </li>
+        </ul>
+
+    </section>
+    <main>
+        <section class="formularioPublicacao">
+            <form id="formPublicacao">
+                <input type="text" name="titulo" class="titulo" id="tituloPublicacao" placeholder="Digite o titulo da publicação"
+                    alt="Digite o titulo da publicação">
+                <input type="text" name="resumo" class="resumo" id="resumoPublicacao"
+                    placeholder="Adicione uma breve descrição sobre o conteudo do post"
+                    alt="Adicione uma breve descrição sobre o conteudo do post">
+                <input type="file" name="capa" placeholder="Adicione uma imagem para capa do post" id="imagemPublicacao"
+                    alt="Adicione uma imagem para capa do post">
+                <textarea name="descricao" class="descricao" id="textoPublicacao" placeholder="Digite aqui o texto da publicação"
+                    alt="Digite aqui o texto da publicação"></textarea>
+
+                <div class="setores">
+                    <input type="text" id="inputSetor" placeholder="Adicionar Setores" list="setor">
+                    <datalist id="setor">
+                        <option value=""></option>
+                        <option value="RH"></option>
+                        <option value="TI"></option>
+                        <option value="Administração"></option>
+                    </datalist>
+                    <button type="button" class="adicionarSetor">Adicionar Setor</button>
+
+                </div>
+                <ul id="listaSetores">
+                </ul>
+
+                <div class="botoes">
+                    <button type="button" class="excluir" id="excluirPublicacao"></button>
+                    <a href="./paginaInicial.html"><button type="button" class="cancelar" onclick="()=>{alert('Cancelando cadastro de publicação.')}">Cancelar</button></a>
+                    <button class="confirmar">Confirmar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="../js/editarPublicacao.js" type="module"></script>
+</body>
+
+</html>

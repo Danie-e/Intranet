@@ -50,7 +50,7 @@ body {
 }
 
 
-/* Botões */
+/* icones */
 .favoritar {
     height: 30px;
     width: 30px;
@@ -60,6 +60,36 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.deletar {
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    background-image: url('../img/Icons/delete.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.editar {
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    background-image: url('../img/Icons/edit.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.resetar {
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    background-image: url('../img/Icons/restart_alt.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Botões */
+
 .excluir {
     height: 30px;
     width: 30px;

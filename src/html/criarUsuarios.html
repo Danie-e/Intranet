@@ -9,8 +9,39 @@
 </head>
 
 <body>
+   
+    <!-- cabeçalho e menu lateral -->
+    <section class="menuSuperior">
+        <ul class="menu">
+            <li>
+                <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones"
+                    id="menuLateral">
+            </li>
+            <li>
+                <p>Favoritos</p>
+            </li>
+            <li>
+                <p>Pesquisas</p>
+            </li>
+            <li>
+                <p>Quizzes</p>
+            </li>
+            <li>
+                <p>PDI's</p>
+            </li>
+
+        </ul>
+        <ul class="menu">
+            <li>
+                <img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa">
+            </li>
+            <li>
+                <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
+            </li>
+        </ul>
+
+    </section>
     <nav class="menu_completo">
-        <button id="menuLateral"><img src="../img/Icons/menu.svg" class="icones"></button>
         <div id="menu_superior">
             <img src="../img/logoTeste.png" alt="Logo da empresa" class="logo">
             <!--uma lista com todos os itens do menu-->
@@ -98,14 +129,14 @@
                     </span>
                 </li>
                 <li class="item">
-                    <a href="">
+                    <a href="criarUsuarios.html">
                         <span class="descricao_icone">
                             Criar usuário
                         </span>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="">
+                    <a href="CRUD_Usuario.html">
                         <span class="descricao_icone">
                             Editar usuário
                         </span>
@@ -140,14 +171,14 @@
                     </a>
                 </li>
                 <li class="item">
-                    <a href="CRUD_Publicacao.html">
+                    <a href="criarPublicacao.html">
                         <span class="descricao_icone">
                             Criar Publicação
                         </span>
                     </a>
                 </li>
                 <li class="item">
-                    <a href="">
+                    <a href="crud_Publicacao.html">
                         <span class="descricao_icone">
                             Editar Públicação
                         </span>
@@ -156,7 +187,7 @@
             </ul>
         </div>
     </nav>
-
+    <!--  -->
     <main>
         <h1>Crie um novo usuário</h1>
 
@@ -166,13 +197,22 @@
                 <input type="text" name="nome" id="nome">
                 <label for="senha">Senha:</label>
                 <input type="text" name="senha" id="senha">
-                <label for="equipe">Equipe:</label>
-                <input type="text" name="equipe" id="equipe">
-                <label for="tipo">Tipo:</label>
-                <input type="number" name="tipo" id="tipo">
-                <input type="file" name="foto" id="foto">
+
+                <div class="dividirDiv">
+                    <div class="secao">
+                        <label for="equipe">Equipe:</label>
+                        <input type="text" name="equipe" id="equipe">
+                        <label for="tipo">Tipo:</label>
+                        <input type="number" name="tipo" id="tipo">
+                    </div>
+                    <div>
+                        <input type="file" accept="image/png, image/jpeg" id="foto">
+                          <img src="" id="enviarImagem" />
+                      </div>
+                </div>
             </div>
-            <button type="submit" class="confirmar">Confirmar</button>
+            <button type="button" class="confirmar" onclick="criarUsuario()">Confirmar</button>
+        </form>
     </main>
 
     <script src="../js/criarUsuarios.js"></script>

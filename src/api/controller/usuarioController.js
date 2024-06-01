@@ -15,7 +15,7 @@ class UsuarioController {
 
     static async procurarUsuario(req, res) {
         try {
-            const id= req.params.id;
+            const id = req.params.id;
             const usuario = await usuarios.findById(id);
             res.status(200).json(usuario);
         }
@@ -27,9 +27,9 @@ class UsuarioController {
 
     static async validarUsuario(req, res) {
         try {
-            const nome= req.params.usuario;
-            const senha= req.params.senha;
-            const usuario = await usuarios.findOne({nome:nome,senha:senha});
+            const nome = req.params.usuario;
+            const senha = req.params.senha;
+            const usuario = await usuarios.findOne({ nome: nome, senha: senha });
             res.status(200).json(usuario);
         }
         catch (erro) {
@@ -38,22 +38,22 @@ class UsuarioController {
         }
     };
 
-    static async cadastrarUsuario(req,res){
-        try{
-            const novoUsuario= await usuarios.create(req.body);
-            res.status(201).json({message:"Usuario cadastrado com sucesso",livro:novoUsuario});
+    static async cadastrarUsuario(req, res) {
+        try {
+            const novoUsuario = await usuarios.create(req.body);
+            res.status(201).json({ message: "Usuario cadastrado com sucesso", usuarios: novoUsuario });
         }
-        catch(erro){
+        catch (erro) {
             res.status(500)
-                .json({message:`${erro.message} - falha ao cadastrar usuario.`});
+                .json({ message: `${erro.message} - falha ao cadastrar usuario.` });
         }
     };
 
     static async atualizarUsuario(req, res) {
         try {
-            const id= req.params.id;
-             await usuarios.findByIdAndUpdate(id, req.body);
-            res.status(200).json({message:"Usuario foi atualizado."});
+            const id = req.params.id;
+            await usuarios.findByIdAndUpdate(id, req.body);
+            res.status(200).json({ message: "Usuario foi atualizado." });
         }
         catch (erro) {
             res.status(500)
@@ -63,9 +63,9 @@ class UsuarioController {
 
     static async excluirUsuario(req, res) {
         try {
-            const id= req.params.id;
-             await usuarios.findByIdAndDelete(id, req.body);
-            res.status(200).json({message:"Usuario foi excluido com sucesso."});
+            const id = req.params.id;
+            await usuarios.findByIdAndDelete(id, req.body);
+            res.status(200).json({ message: "Usuario foi excluido com sucesso." });
         }
         catch (erro) {
             res.status(500)

@@ -1,9 +1,4 @@
 @import url(styles.css);
-@import url(CRUDpublicacao.css);
-
-main{
-    width: 50%;
-}
 
 .publicacao{
     display:block;
@@ -20,7 +15,7 @@ h1{
     justify-content: space-between ;
 }
 
-ul{
+.publicacao ul{
     display: flex;
 }
 

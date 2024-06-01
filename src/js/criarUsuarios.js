@@ -1,16 +1,20 @@
-document.addEventListener("submit", async function () {
+var arquivoImagem = "";
+
+// const enviar= document.getElementsByClassName('confirmar');
+// enviar.addEventListener("submit", e => async function (e) {
+//     e.preventDefault();
+async function criarUsuario() {
     const nome = document.getElementById("nome").value;
     const senha = document.getElementById("senha").value;
     const equipe = document.getElementById("equipe").value;
     const tipo = document.getElementById("tipo").value;
-    const imagem = document.getElementById("foto").value;
 
     var novoUsuario = {
         nome: nome,
         senha: senha,
         equipe: equipe,
         tipo: tipo,
-        imagem: imagem
+        imagem: arquivoImagem
     };
 
     const resultado = await fetch("http://localhost:3000/usuarios", {
@@ -20,11 +24,28 @@ document.addEventListener("submit", async function () {
         },
         body: JSON.stringify(novoUsuario),
     });
-    var result = resultado.json();
-    alert(result);
-    if (result.ok) {
-        alert(resultado.message);
+    const result = await resultado.json();
+
+    if (result.status = 201) {
+        alert(result.message);
+        window.location.href = 'paginaInicial.html';
     }
     else
-        alert(resultado.message)
-});
+        alert(result.message)
+};
+
+const imagem = document.getElementById('enviarImagem')
+const foto = document.getElementById('foto')
+foto.addEventListener("change", previewFile);
+
+function previewFile({ target }) {
+    const file = target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+        imagem.src = reader.result;
+        arquivoImagem = reader.result;
+    };
+}

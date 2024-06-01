@@ -1,6 +1,7 @@
 @import url(styles.css);
+@import url(menus.css);
 
-h1{
+h1 {
     padding: 15px;
     margin: 2rem 2rem;
     text-align: center;
@@ -8,23 +9,64 @@ h1{
     font-size: 1.5rem;
 }
 
-.formulario{
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
-.campos{
-
+.campos {
     margin: auto;
-    padding: 2% ;
+    padding: 2%;
     width: 90%;
     display: flex;
     flex-direction: column;
     background-color: var(--color-verde-medio);
 }
 
-.formulario input[type=file] {
+.formulario label {
     display: flex;
-    width: 100px;
-    height: 100px;
+    margin-top: 10px;
+}
+
+.formulario input[type=file]
+{
+display: flex;
+width: 150px;
+margin: auto;
+align-content: end;
+border: 1px solid black;
+background-color: var(--color-fundo);
+}
+
+#imagem {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
     align-content: end;
-    background-color: var( --color-fundo);
-} 
+    border: 1px solid black;
+}
+#enviarImagem{
+      display: block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    align-content: end;
+    border: 1px solid black;
+}
+
+.dividirDiv {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.secao {
+    display: flex;
+    flex-direction: column;
+}
+
+.confirmar {
+    margin: 2% 5%;
+
+}

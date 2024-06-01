@@ -13,18 +13,22 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     const data = new Date(dados.data);
+    var img = dados.autor.imagem != "" ? dados.autor.imagem : "../img/Icons/account_circle.svg";
 
-    let tituloPagina = document.getElementById('tituloPagina');
-    let titulo = document.getElementById('titulo');
-    let descricao = document.getElementById('descricao');
-    let nomeAutor = document.getElementById('nomeAutor');
-    let dataPublicacao = document.getElementById('dataPublicacao');
-    let texto = document.getElementById('texto');
-    let categoria = document.getElementById('categorias');
+    const tituloPagina = document.getElementById('tituloPagina');
+    const titulo = document.getElementById('titulo');
+    const descricao = document.getElementById('descricao');
+    const imagem = document.getElementById('imagem')
+    const nomeAutor = document.getElementById('nomeAutor');
+    const dataPublicacao = document.getElementById('dataPublicacao');
+    const texto = document.getElementById('texto');
+    const categoria = document.getElementById('categorias');
+
 
     tituloPagina.innerHTML = `${dados.titulo}`;
     titulo.innerHTML = `${dados.titulo}`;
     descricao.innerHTML = `${dados.descricao}`;
+    imagem.src = `${img}`;
     nomeAutor.innerHTML = `${dados.autor.nome}`;
     dataPublicacao.innerHTML = `${data.toLocaleDateString()}`;
     texto.innerHTML = `${dados.texto}`;

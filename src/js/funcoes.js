@@ -10,12 +10,14 @@ function acharCookie(nome) {
     return result[1];
 }
 
-async function editarPublicacao(id){
-
+async function procurarUsuario(id) {
+    const result = await fetch(`http://localhost:3000/usuarios/${id}`);
+    return await result.json();
 }
+
 async function procurarPublicacao(id) {
     const result = await fetch(`http://localhost:3000/publicacao/${id}`);
-    return result.json();
+    return await result.json();
 }
 
 async function deletarPublicacao(id) {
@@ -35,10 +37,9 @@ async function deletarPublicacao(id) {
     }
 }
 
-
 export const funcoes = {
     acharCookie,
-    editarPublicacao,
     deletarPublicacao,
-    procurarPublicacao
+    procurarPublicacao,
+    procurarUsuario
 }

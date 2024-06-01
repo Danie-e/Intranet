@@ -12,9 +12,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             listaCategorias += ` <li> ${elemento} </li> `
         });
 
+        var img = element.autor.imagem != '' ? element.autor.imagem : "../img/Icons/account_circle.svg";
         document.getElementById('paginaInicialPublicacoes').innerHTML += `
             <div class="card" id="${element._id}">
-                <img src="../img/Icons/account_circle.svg">
+                <img src="${img}" id="imagem">
                 <div class="publicacao">
                     <h3 class="tituloCard">${element.titulo}</h2>
                         <p class="descricaoCard">${element.descricao}</p>

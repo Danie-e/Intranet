@@ -1,3 +1,5 @@
+import { funcoes } from "./funcoes.js";
+
 var categoria = '';
 
 var adicionarSetorBtn = document.querySelector(".adicionarSetor");
@@ -26,7 +28,7 @@ async function salvarPublicacao(evento) {
     evento.preventDefault();
     var titulo = document.getElementById('tituloPublicacao').value;
     var descricao = document.getElementById('resumoPublicacao').value;
-    var autor = "663fcbac94b546e3d426573b"
+    var autor = funcoes.acharCookie("id=");
     var imagem = document.getElementById('imagemPublicacao').value;
     var texto = document.getElementById('textoPublicacao').value;
 
@@ -38,7 +40,7 @@ async function salvarPublicacao(evento) {
         texto: texto,
         categorias: categoria
     }
-    // alert(JSON.stringify(publicacoes));
+    alert(JSON.stringify(publicacoes));
     const result = await fetch("http://localhost:3000/publicacao", {
         method: "POST",
         headers: {
@@ -46,7 +48,7 @@ async function salvarPublicacao(evento) {
         },
         body: JSON.stringify(publicacoes)
     });
-    if (result.ok) {
+    if (result.status==201) {
         alert("Publicação criada com sucesso!");
         window.location.href = './paginaInicial.html';
     }

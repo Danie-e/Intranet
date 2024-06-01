@@ -9,36 +9,184 @@
 </head>
 
 <body>
+<!-- cabeçalho e menu lateral -->
+<section class="menuSuperior">
+    <ul class="menu">
+        <li>
+            <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones"
+                id="menuLateral">
+        </li>
+        <li>
+            <p>Favoritos</p>
+        </li>
+        <li>
+            <p>Pesquisas</p>
+        </li>
+        <li>
+            <p>Quizzes</p>
+        </li>
+        <li>
+            <p>PDI's</p>
+        </li>
 
-    <section class="menuSuperior">
-        <ul class="menu">
-            <li>
-                <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones">
+    </ul>
+    <ul class="menu">
+        <li>
+            <img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa">
+        </li>
+        <li>
+            <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
+        </li>
+    </ul>
+
+</section>
+<nav class="menu_completo">
+    <div id="menu_superior">
+        <img src="../img/logoTeste.png" alt="Logo da empresa" class="logo">
+        <!--uma lista com todos os itens do menu-->
+        <ul id="items">
+            <li class="item">
+                <span class="descricao_icone">
+                    Favoritos
+                </span>
             </li>
-            <li>
-                <p>Favoritos</p>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Publicações favoritadas
+                    </span>
+                </a>
             </li>
-            <li>
-                <p>Pesquisas</p>
+            <li class="item">
+                <span class="descricao_icone">
+                    Pesquisas
+                </span>
             </li>
-            <li>
-                <p>Quizzes</p>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Pesquisas pendentes
+                    </span>
+                </a>
             </li>
-            <li>
-                <p>PDI's</p>
+            <li class="item">
+                <span class="descricao_icone">
+                    Quizzes
+                </span>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Quizzes pendentes
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Relatórios de Quizzes
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <span class="descricao_icone">
+                    PDI
+                </span>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Meus PDI's
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        PDI's finalizados
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Criar PDI
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Sugestões para PDI
+                    </span>
+                </a>
             </li>
 
+            <li class="item">
+                <span class="descricao_icone">
+                    Adminstrador
+                </span>
+            </li>
+            <li class="item">
+                <a href="criarUsuarios.html">
+                    <span class="descricao_icone">
+                        Criar usuário
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="CRUD_Usuario.html">
+                    <span class="descricao_icone">
+                        Editar usuário
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Criar Pesquisas
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Editar Pesquisa
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Criar Quiz
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="">
+                    <span class="descricao_icone">
+                        Editar Quiz
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="criarPublicacao.html">
+                    <span class="descricao_icone">
+                        Criar Publicação
+                    </span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="crud_Publicacao.html">
+                    <span class="descricao_icone">
+                        Editar Públicação
+                    </span>
+                </a>
+            </li>
         </ul>
-        <ul class="menu">
-            <li>
-                <img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa">
-            </li>
-            <li>
-                <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
-            </li>
-        </ul>
-
-    </section>
+    </div>
+</nav>
+<!--  -->
 
     <main>
         <section class="publicacao">
@@ -48,7 +196,7 @@
 
             <div class="UsuarioDataPublicacao">
                 <div>
-                    <img>
+                    <img src="" id="imagem" />
                     <p id="nomeAutor"></p>
                 </div>
                 <p id="dataPublicacao"></p>
@@ -57,7 +205,7 @@
             <img>
             <p id="texto">
             </p>
-           
+
             <ul id="categorias">
             </ul>
         </section>
@@ -65,7 +213,7 @@
 
     <!-- <script src="../js/padrao.js"></script> -->
     <script src="../js/publicacao.js" type="module"></script>
-
+    <script src="../js/padrao.js"></script>
 </body>
 
 </html>

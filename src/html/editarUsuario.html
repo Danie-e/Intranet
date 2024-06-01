@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/crudPublicacao.css">
-    <title>Editar Publicação</title>
+    <link rel="stylesheet" href="../css/criarUsuarios.css">
+    <title>Editar Usuarios</title>
 </head>
 
 <body>
-  
+
     <!-- cabeçalho e menu lateral -->
     <section class="menuSuperior">
         <ul class="menu">
@@ -122,7 +122,6 @@
                         </span>
                     </a>
                 </li>
-
                 <li class="item">
                     <span class="descricao_icone">
                         Adminstrador
@@ -190,15 +189,34 @@
     <!--  -->
 
     <main>
-       
-        <section id="EdicaoPublicacoes">
+        <h1>Edição de usuário</h1>
 
-        </section>
+        <form class="formulario">
+            <div class="campos">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome">
+                <label for="senha">Senha:</label>
+                <input type="text" name="senha" id="senha">
+
+                <div class="dividirDiv">
+                    <div class="secao">
+                        <label for="equipe">Equipe:</label>
+                        <input type="text" name="equipe" id="equipe">
+                        <label for="tipo">Tipo:</label>
+                        <input type="number" name="tipo" id="tipo">
+                    </div>
+                    <div>
+                        <input type="file" accept="image/png, image/jpeg" id="foto">
+                        <img src="" id="enviarImagem" />
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="confirmar" id="confirmar">Confirmar</button>
+        </form>
     </main>
 
-    <script src="../js/crudPublicacao.js"></script>
+    <script src="../js/editarUsuarios.js" type="module"></script>
     <script src="../js/padrao.js"></script>
-
 </body>
 
 </html>

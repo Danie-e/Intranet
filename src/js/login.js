@@ -12,10 +12,8 @@ async function validarUsuario() {
         document.cookie = `id=${usuarios[index]._id}`;
         window.location.href = './html/paginaInicial.html';
     } else {
-        var novoTexto = "Senha ou usuario não encontados";
         nomeUsuario.value = "";
         senhaUsuario.value = ""
-        document.getElementById("mensagem").innerHTML = novoTexto;
+        document.getElementById("mensagem").value = "Senha ou usuario não encontados";
     }
-
 }

@@ -13,6 +13,7 @@ const PDISchema = new mongoose.Schema({
   conteudo: {type: String},
   tituloTarefa1: {type: String},
   linkTarefa1: {type: String},
+  status: {type: Boolean},
   prazo: {type: Date},
 }, { versionKey: false });
 

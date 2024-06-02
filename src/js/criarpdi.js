@@ -10,11 +10,14 @@ async function salvarPDI() {
     var linkTarefa1 = document.getElementById('cAdcLink1').value;
 
 
-    var publicacoes = {
+    var pdi = {
         titulo: titulo,
         subtitulo: subtitulo,
         conteudo: conteudo,
         prazo: prazo,
+        tituloTarefa1: tituloTarefa1,
+        linkTarefa1: linkTarefa1,
+        status: false,
     }
     // alert(JSON.stringify(publicacoes));
     const result = await fetch("http://localhost:3000/pdi", {
@@ -22,7 +25,7 @@ async function salvarPDI() {
         headers: {
             "Content-type": "application/json"
         },
-        body: JSON.stringify(publicacoes)
+        body: JSON.stringify(pdi)
     });
     console.log(result);
     if (result.ok) {

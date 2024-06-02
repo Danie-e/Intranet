@@ -1,5 +1,4 @@
 import express from "express";
-import PublicacaoController from "../controller/publicacaoController.js";
 import PDIController from "../controller/pdiController.js"; // Importando o PDIController
 
 const routes = express.Router();

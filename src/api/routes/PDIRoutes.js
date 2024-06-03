@@ -11,6 +11,6 @@ routes.put("/pdi/:id", PDIController.atualizarPDI);
 routes.delete("/pdi/:id", PDIController.excluirPDI);
 
 //testes
-routes.get("/pdi/:status", PDIController.procurarPDIstatus);
+//routes.get("/pdi/:status", PDIController.procurarPDIstatus);
 
 export default routes;

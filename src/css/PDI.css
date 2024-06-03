@@ -57,6 +57,7 @@
 
 .botoesRodape {
     text-align: center;
+    border-radius: 20%;
 }
 
 .rodape img {
@@ -64,6 +65,10 @@
 }
 
 .rodape button {
-    border-radius: 20%;
+    
+}
+
+.rodape.botoesRodape2 button{
+    border-radius: 0%;
 }
 

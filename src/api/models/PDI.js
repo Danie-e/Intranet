@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
 
-const tarefasSchema = new mongoose.Schema({
+/*const tarefasSchema = new mongoose.Schema({
     descricao: { type: String, required: true },
     link: { type: String },
     feito: {type: Boolean},
-});
+});*/
+
+import { usuariosSchema } from "./Usuario.js";
 
 const PDISchema = new mongoose.Schema({
   id: { type: mongoose.Schema.Types.ObjectId },
@@ -15,6 +17,7 @@ const PDISchema = new mongoose.Schema({
   linkTarefa1: {type: String},
   status: {type: Boolean},
   prazo: {type: Date},
+  autor: usuariosSchema,
 }, { versionKey: false });
 
 const pdi = mongoose.model("pdi", PDISchema);

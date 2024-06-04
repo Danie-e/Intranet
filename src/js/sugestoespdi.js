@@ -7,7 +7,7 @@ async function salvarsugestoesPDI() {
     var linkTarefa1 = document.getElementById('cAdcLink1').value;
 
 
-    var pdi = {
+    var sugestoespdi = {
         titulo: titulo,
         subtitulo: subtitulo,
         conteudo: conteudo,

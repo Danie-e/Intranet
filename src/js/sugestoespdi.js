@@ -1,4 +1,3 @@
-
 async function salvarsugestoesPDI() {
     var titulo = document.getElementById('adcTitulo').value;
     var subtitulo = document.getElementById('adcArea').value;
@@ -25,9 +24,9 @@ async function salvarsugestoesPDI() {
     console.log(result);
     if (result.ok) {
         alert("Sugestão de PDI criado com sucesso");
-        window.open("./meusPdis.html");
+        window.open("./sugestoesPDI.html");
     }
     else {
-        alert(`${result.message} - Não foi possivel criar PDI!`);
+        alert(`${result.message} - Não foi possivel criar a sugestão de PDI!`);
     }
 }

@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const result = await fetch("http://localhost:3000/pdi");
+
+    var id = localStorage.getItem("usuarioLocal");
+
+    const result = await fetch("http://localhost:3000/pdi/"+id);
     const pdiList = await result.json();
 
     pdiList.forEach(pdi => {

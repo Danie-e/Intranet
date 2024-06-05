@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { usuariosSchema } from "./Usuario.js";
 
 const sugestoesPDISchema = new mongoose.Schema({
   id: { type: mongoose.Schema.Types.ObjectId },
@@ -8,7 +7,6 @@ const sugestoesPDISchema = new mongoose.Schema({
   conteudo: {type: String},
   tituloTarefa1: {type: String},
   linkTarefa1: {type: String},
-  autor: usuariosSchema,
 }, { versionKey: false });
 
 const sugestoespdi = mongoose.model("sugestoespdi", sugestoesPDISchema);

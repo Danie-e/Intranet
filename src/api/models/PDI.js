@@ -6,7 +6,7 @@ import mongoose from "mongoose";
     feito: {type: Boolean},
 });*/
 
-import { usuariosSchema } from "./Usuario.js";
+//import { usuariosSchema } from "./Usuario.js";
 
 const PDISchema = new mongoose.Schema({
   id: { type: mongoose.Schema.Types.ObjectId },
@@ -17,7 +17,7 @@ const PDISchema = new mongoose.Schema({
   linkTarefa1: {type: String},
   status: {type: Boolean},
   prazo: {type: Date},
-  autor: usuariosSchema,
+  autor: {type: String},
 }, { versionKey: false });
 
 const pdi = mongoose.model("pdi", PDISchema);

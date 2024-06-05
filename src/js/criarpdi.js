@@ -18,6 +18,7 @@ async function salvarPDI() {
         tituloTarefa1: tituloTarefa1,
         linkTarefa1: linkTarefa1,
         status: false,
+        autor: localStorage.getItem("usuarioLocal"),
     }
     // alert(JSON.stringify(publicacoes));
     const result = await fetch("http://localhost:3000/pdi", {

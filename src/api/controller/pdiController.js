@@ -13,12 +13,20 @@ class PDIController {
 
     static async procurarPDI(req, res) {
         try {
-            const id = req.params.id;
-            const foundPDI = await pdi.findById(id);
-            if (!foundPDI) {
-                return res.status(404).json({ message: "PDI não encontrado." });
-            }
-            res.status(200).json(foundPDI);
+            //const autor = req.params.autor;
+            // const foundPDI = await pdi.find(req);
+            // if (!foundPDI) {
+            //     return res.status(404).json({ message: "PDI não encontrado. Problemas no ID do usuário" });
+            // }
+            // res.status(200).json(foundPDI);
+            
+            const autor = req.params.autor;
+            const foundPDIs = await pdi.find({ autor: autor });
+            if (foundPDIs.length === 0) {
+            return res.status(404).json({ message: "Nenhum PDI encontrado para este autor." });
+        }
+        res.status(200).json(foundPDIs);
+
         } catch (error) {
             res.status(500).json({ message: `${error.message} - Falha na requisição do PDI.` });
         }
@@ -42,7 +50,7 @@ class PDIController {
             //     data: Date(),
             // };
 
-            // Criar o PDI
+            // //Criar o PDI
             // const pdiCriado = await pdi.create(cadastroPDI);
             const pdiCriado = await pdi.create(novoPDI);
             res.status(201).json({ message: "Criado com sucesso", pdi: pdiCriado });

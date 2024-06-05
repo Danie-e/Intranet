@@ -5,7 +5,7 @@ const routes = express.Router();
 
 // Rotas para PDI
 routes.get("/pdi", PDIController.listarPDI);
-routes.get("/pdi/:id", PDIController.procurarPDI);
+routes.get("/pdi/:autor", PDIController.procurarPDI); // pelo id do usuário
 routes.post("/pdi", PDIController.cadastrarPDI);
 routes.put("/pdi/:id", PDIController.atualizarPDI);
 routes.delete("/pdi/:id", PDIController.excluirPDI);

@@ -1,7 +1,7 @@
 import express from "express";
 import PublicacaoController from "../controller/publicacaoController.js";
 
-const routes= express.Router();
+const routes = express.Router();
 
 routes.get("/publicacao", PublicacaoController.listarPublicacao);
 routes.get("/publicacao/:id", PublicacaoController.procurarPublicacao);

@@ -20,12 +20,4 @@ app.use(express.urlencoded({limit: '50mb'}));
 
 routes(app);
 
-
-
-app.delete("/livros/:id", (req, res) => {
-  const index = buscaLivro(req.params.id);
-  livros.splice(index, 1);
-  res.status(200).send("livro removido com sucesso");
-});
-
 export default app;

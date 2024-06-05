@@ -37,8 +37,11 @@ async function validarUsuario() {
             idUsuarioLocal = usuario._id;
         }
     });
+
+    //console.log(localStorage.getItem("usuarioLocal"));
     
     localStorage.setItem("usuarioLocal", idUsuarioLocal);
+
 
     if (index > 0) {
         // window.open("./html/paginaInicial.html");

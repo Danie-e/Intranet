@@ -4,7 +4,7 @@
     height: 60px;
     width: initial;
     display: flex;
-    margin: 30px 40px;
+    margin: 30px 40px 0px;
     justify-content: space-between;
     align-items: center;
 }

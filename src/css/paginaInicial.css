@@ -1,3 +1,18 @@
 @import url(./styles.css);
 @import url(./card.css);
 
+.banner{
+    display: flex;
+    padding: 4%;
+    width: -webkit-fill-available;
+}
+
+.carrossel{
+    
+}
+
+.novasPublicacoes{
+    background-color: var( --color-verde-intermediario);
+    padding:1% 1%;
+    margin: 0 4%;
+}

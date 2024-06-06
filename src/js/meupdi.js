@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     const pdiList = await result.json();
 
     pdiList.forEach(pdi => {
+
+        if (!pdi.status){
             const buttonText = pdi.status ? "Feito" : "Concluir ação";
     
             document.getElementById('todosPdis').innerHTML +=
@@ -42,8 +44,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <div class="rodape">
                         <p class="prazo">Prazo: ${pdi.prazo}</p>
                         <div class="botoesRodape">
-                            <button><img src="/img/Icons/edit.svg" alt=""></button>
-                            <button><img src="/img/Icons/deleteazul.png" alt=""></button>
+                            <button ><img src="/img/Icons/edit.svg" alt=""></button>
+                            <button onclick="atualizarPDI(${pdi._id})"><img src="/img/Icons/deleteazul.png" alt=""></button>
                         </div>
                     </div>
                 </div>
@@ -58,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             return `${day}/${month}/${year}`;
         }*/
 
-        
+    }
     });
 });
 

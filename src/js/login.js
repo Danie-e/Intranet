@@ -21,7 +21,7 @@ async function validarUsuario() {
     let nomeUsuario = document.getElementById('usuario');
     let senhaUsuario = document.getElementById('senha');
 
-    console.log(usuarios);
+    //console.log(usuarios);
     
 
     var index = usuarios.findIndex(x => x.nome == nomeUsuario.value && x.senha == senhaUsuario.value)

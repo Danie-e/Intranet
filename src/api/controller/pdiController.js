@@ -11,7 +11,7 @@ class PDIController {
         }
     }
 
-    static async procurarPDI(req, res) {
+    static async procurarPDI(req, res) { // por autor
         try {
             //const autor = req.params.autor;
             // const foundPDI = await pdi.find(req);

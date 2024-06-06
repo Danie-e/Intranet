@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                         <p class="prazo">Prazo: ${pdi.prazo}</p>
                         <div class="botoesRodape">
                             <button ><img src="/img/Icons/edit.svg" alt=""></button>
-                            <button onclick="atualizarPDI(${pdi._id})"><img src="/img/Icons/deleteazul.png" alt=""></button>
+                            <button onclick="alterarPDI(${pdi._id})"><img src="/img/Icons/deleteazul.png" alt=""></button>
                         </div>
                     </div>
                 </div>
@@ -65,3 +65,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
+async function alterarPDI(req) {
+    alert("PDI criado com sucesso");
+}

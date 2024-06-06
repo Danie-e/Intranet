@@ -5,7 +5,7 @@ import pdi from "./PDIRoutes.js"
 
 const routes = (app) => {
     app.route("/").get((req,res)=> res.status(200).send("curso de Node.js"));
-    app.use(express.json(),usuarios,publicacao,pdi);
+    app.use(express.json(),usuarios,publicacao,pdi,sugestoespdi);
 };
 
 export default routes;

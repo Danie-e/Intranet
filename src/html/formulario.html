@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/paginaInicial.css">
-    <title>Pagina Inicial</title>
+    <link rel="stylesheet" href="../css/criarFormulario.css">
+    <title id="nomePagina"></title>
 </head>
 
 <body>
@@ -189,22 +189,23 @@
         </div>
     </nav>
     <!--  -->
-    <section><img src="../img/banner.png" class="banner" /></section>
-
     <main>
-        <p> Pagina em manutenção, click no menu e vá para pagina <strong>Criar Publicação</strong>.</p>
-        <section id="carrossel" class="carrossel">
-            
-        </section>
+        <section>
+            <input type="text" name="titulo" id="nomeFormulario" placeholder="Adicione aqui o nome do Formulario">
 
-        <section id="paginaInicialPublicacoes">
-            <p class="novasPublicacoes">Novas Publicações</p>
+            <form class="formulario" id="criarFormularios">
+                <div class="input" id="novosInputs">
+                </div>
+
+            </form>
+            <div class="botoes">
+                <button type="reset" class="cancelar">Cancelar</button>
+                <button type="button" class="confirmar" id="criarFormulario">Confirmar</button>
+            </div>
         </section>
     </main>
 
-    <script src="../js/paginaInicial.js"></script>
-    <script src="../js/padrao.js"></script>
-
+    <script src="../js/formulario.js" type="module"></script>
 </body>
 
 </html>

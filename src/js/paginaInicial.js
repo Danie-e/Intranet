@@ -1,8 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
-    const result = await fetch("http://localhost:3000/publicacao")
+    const carrossel = document.getElementById('carrossel');
+    const publicacao = await fetch("http://localhost:3000/publicacao")
 
-    const publicacoes = await result.json();
+    const publicacoes = await publicacao.json();
     publicacoes.forEach(element => {
 
         let categorias = `${element.categorias}`;
@@ -28,6 +29,18 @@ document.addEventListener("DOMContentLoaded", async function () {
                 </div>
             </div> `
     });
+
+    const formulario = await fetch("http://localhost:3000/formulario")
+    const formularios = await formulario.json();
+    formularios.forEach(element => {
+        carrossel.innerHTML += `
+        <div class="cardFormulario" id="${element._id}">
+            <img src="" class="cardFormulario__Imagem">
+            <h2 class="cardFormulario__Titulo">${element.titulo}</h2>
+            <p class="cardFormulario__Paragrafo">Novo Formulario</p>
+        </div>
+        `;
+    });
 });
 
 var card = document.getElementById('paginaInicialPublicacoes');
@@ -35,3 +48,12 @@ card.onclick = function (elemento) {
     window.location.href = 'publicacao.html';
     document.cookie = `idPublicacao=${elemento.target.id}; path=/`;
 };
+
+
+var cardFormulario = document.getElementById('carrossel');
+cardFormulario.onclick = function (elemento) {
+    alert(elemento.target.id)
+    window.location.href = 'formulario.html';
+    document.cookie = `idFormulario=${elemento.target.id}; path=/`;
+};
+

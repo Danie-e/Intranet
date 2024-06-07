@@ -1,18 +1,41 @@
 @import url(./styles.css);
 @import url(./card.css);
 
-.banner{
+.banner {
     display: flex;
     padding: 4%;
     width: -webkit-fill-available;
+    max-height: 350px;
 }
 
-.carrossel{
+.carrossel {
+    display: flex;
+}
+
+.novasPublicacoes {
+    background-color: var(--color-verde-intermediario);
+    padding: 1% 1%;
+    margin: 0 4%;
+}
+
+.cardFormulario {
+    border: 1px solid;
+    padding: 1%;
+    width: 150px;
+    margin: 10px;
+}
+
+.cardFormulario>* {
+pointer-events: none;
+}
+.cardFormulario__Titulo{
     
 }
+.cardFormulario__Imagem {
+    width: 100px;
+    height: 100px;
+}
 
-.novasPublicacoes{
-    background-color: var( --color-verde-intermediario);
-    padding:1% 1%;
-    margin: 0 4%;
+.cardFormulario__paragrafo {
+    color: var(--color-verde-escuro);
 }

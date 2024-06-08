@@ -19,6 +19,11 @@ main {
     margin-bottom: 30px;
 }
 
+#imagemFormulario {
+    width: -webkit-fill-available;
+    height: 200px;
+}
+
 .labelTexto {
     display: block;
 }

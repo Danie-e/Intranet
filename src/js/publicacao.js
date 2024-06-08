@@ -25,12 +25,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     const categoria = document.getElementById('categorias');
     const imagemPublicacao = document.getElementById('imagemPublicacao');
 
+    if(dados.imagem)
+        imagemPublicacao.src=dados.imagem;
+    else
+    imagemPublicacao.style.display="none";
 
     tituloPagina.innerHTML = `${dados.titulo}`;
     titulo.innerHTML = `${dados.titulo}`;
     descricao.innerHTML = `${dados.descricao}`;
     imagem.src = `${img}`;
-    imagemPublicacao.src=`${dados.imagem}`;
     nomeAutor.innerHTML = `${dados.autor.nome}`;
     dataPublicacao.innerHTML = `${data.toLocaleDateString()}`;
     texto.innerHTML = `${dados.texto}`;

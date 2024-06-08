@@ -1,5 +1,5 @@
 import { funcoes } from "./funcoes.js";
-
+var arquivoImagem = '';
 var conteudo = '';
 const buttonModal = document.getElementById('adicionarInput');
 const inputs = document.getElementById('modal');
@@ -17,7 +17,8 @@ buttonCriar.onclick = async function () {
         titulo: nomeFormulario,
         autor: autor,
         formHtml: conteudo,
-        conteudo: valores
+        conteudo: valores,
+        imagem: arquivoImagem
     }
 
     const result = await fetch("https://api-intranet.vercel.app/formulario", {
@@ -96,4 +97,20 @@ inputs.onclick = function (elemento) {
     }
 
     inputs.style.display = 'none';
+}
+
+const imagem = document.getElementById('enviarImagem')
+const foto = document.getElementById('foto')
+foto.addEventListener("change", previewFile);
+
+function previewFile({ target }) {
+    const file = target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+        imagem.src = reader.result;
+        arquivoImagem = reader.result;
+    };
 }

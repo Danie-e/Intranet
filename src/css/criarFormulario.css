@@ -18,6 +18,10 @@ main {
     width: 100%;
     margin-bottom: 30px;
 }
+#enviarImagem{
+    width: -webkit-fill-available;
+    height: 200px;
+}
 
 input{
     height: 25px;

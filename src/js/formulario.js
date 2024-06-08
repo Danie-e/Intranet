@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById('nomePagina').innerHTML = elemento.titulo;
     document.getElementById('nomeFormulario').innerHTML = elemento.titulo;
     const form = document.getElementById('inputs');
+    const imagem = document.getElementById('imagemFormulario');
+    if(elemento.imagem)
+        imagem.src=elemento.imagem;
+    else
+    imagem.style.display="none";
 
     const inputs = elemento.formHtml.split(" ");
     var valor = 0;

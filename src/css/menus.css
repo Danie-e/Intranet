@@ -4,9 +4,9 @@
 #menu_completo {
     display: none;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     background-color: var(--color-branco);
-    padding: 10px;
+    padding: 20px;
 }
 
 #menu_completo button {

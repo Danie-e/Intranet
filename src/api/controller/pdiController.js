@@ -70,11 +70,30 @@ class PDIController {
         }
     }
 
+    // static async excluirPDI(req, res) {
+    //     try {
+    //         const id = req.params.id;
+    //         console.log(req);
+    //         filtro = { "_id": ObjectId(req) }
+    //         await pdi.deleteOne(filtro);
+    //         res.status(200).json({ message: "PDI excluído com sucesso." });
+    //     } catch (error) {
+    //         res.status(500).json({ message: `${error.message} - Falha na requisição de exclusão do PDI.` });
+    //     }
+    // }
+
     static async excluirPDI(req, res) {
         try {
-            const id = req.params.id;
-            await pdi.findByIdAndDelete(id);
-            res.status(200).json({ message: "PDI excluído com sucesso." });
+            const id = req.params.id; // o req.body.id dependiendo de cómo envíes el ID
+            const filtro = { "_id": ObjectId(id) };
+    
+            const resultado = await pdi.deleteOne(filtro);
+    
+            if (resultado.deletedCount === 1) {
+                res.status(200).json({ message: "PDI excluído com sucesso." });
+            } else {
+                res.status(404).json({ message: "PDI não encontrado." });
+            }
         } catch (error) {
             res.status(500).json({ message: `${error.message} - Falha na requisição de exclusão do PDI.` });
         }

@@ -31,7 +31,7 @@ async function salvarsugestoesPDI() {
     console.log(result);
     if (result.ok) {
         alert("Sugestão de PDI criado com sucesso");
-        window.open("./SugestoesPDI.html");
+        window.open("./VerSugestoesPDI.html");
     }
     else {
         alert(`${result.message} - Não foi possivel criar sugestoes de PDI!`);

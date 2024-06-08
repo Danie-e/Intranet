@@ -44,12 +44,15 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <div class="rodape">
                         <p class="prazo">Prazo: ${pdi.prazo}</p>
                         <div class="botoesRodape">
-                            <button ><img src="/img/Icons/edit.svg" alt=""></button>
-                            <button onclick="alterarPDI(${pdi._id})"><img src="/img/Icons/deleteazul.png" alt=""></button>
+                            <button><img src="/img/Icons/edit.svg" alt=""></button>
+                            <button onclick="excluirPDIdobanco('${pdi._id}')" ><img src="/img/Icons/deleteazul.png" alt=""></button>
                         </div>
                     </div>
                 </div>
                 `;
+
+                localStorage.setItem("pdiId", pdi._id);
+
 
 
         /*function formatDate(date) {
@@ -67,4 +70,27 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 async function alterarPDI(req) {
     alert("PDI criado com sucesso");
+};
+
+async function excluirPDIdobanco(req) {
+    alert("teste com sucesso sera???");
+
+    //fetch("http://localhost:3000/pdi/"+req){method: 'delete'};
+
+    fetch(`http://localhost:3000/pdi/${req}`, {
+  method: 'DELETE'
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('A requisição não foi bem-sucedida');
+    }
+    return response.json(); // Não precisamos do JSON da resposta para uma requisição DELETE
+  })
+  .then(() => {
+    console.log('Recurso excluído com sucesso');
+  })
+  .catch(error => {
+    console.error('Erro ao tentar excluir o recurso:', error);
+  });
+
 }

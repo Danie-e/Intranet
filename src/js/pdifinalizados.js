@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const result = await fetch("http://localhost:3000/pdi/"+id);
     const pdiList = await result.json();
 
-    localStorage.setItem("list", pdiList);
+    //localStorage.setItem("list", pdiList);
 
     pdiList.forEach(pdi => {
             //const buttonText = pdi.status ? "Feito" : "Concluir ação";

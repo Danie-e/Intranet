@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 });
 
+
 var card = document.getElementById('paginaInicialPublicacoes');
 card.onclick = function (elemento) {
     window.location.href = 'publicacao.html';
@@ -52,7 +53,7 @@ card.onclick = function (elemento) {
 
 var cardFormulario = document.getElementById('carrossel');
 cardFormulario.onclick = function (elemento) {
-    alert(elemento.target.id)
+    // alert(elemento.target.id)
     window.location.href = 'formulario.html';
     document.cookie = `idFormulario=${elemento.target.id}; path=/`;
 };

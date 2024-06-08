@@ -19,7 +19,6 @@ buttonCriar.onclick = async function () {
         formHtml: conteudo,
         conteudo: valores
     }
-    console.log(await JSON.stringify(corpo));
 
     const result = await fetch("https://api-intranet.vercel.app/formulario", {
         method: "POST",

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 async function carregarTodasUsuarios() {
-    const result = await fetch("http://localhost:3000/usuarios")
+    const result = await fetch("https://api-intranet.vercel.app/usuarios")
 
     const usuarios = await result.json();
     usuarios.forEach(element => {
@@ -24,7 +24,7 @@ async function carregarTodasUsuarios() {
     });
 };
 async function deletarUsuario(id) {
-    const result = await fetch(`http://localhost:3000/usuarios/${id}`, {
+    const result = await fetch(`https://api-intranet.vercel.app/usuarios/${id}`, {
         method: "DELETE",
         headers: {
             "Content-type": "application/json"

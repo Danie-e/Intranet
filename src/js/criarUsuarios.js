@@ -17,7 +17,7 @@ async function criarUsuario() {
         imagem: arquivoImagem
     };
 
-    const resultado = await fetch("http://localhost:3000/usuarios", {
+    const resultado = await fetch("https://api-intranet.vercel.app/usuarios", {
         method: "POST",
         headers: {
             "Content-type": "application/json"

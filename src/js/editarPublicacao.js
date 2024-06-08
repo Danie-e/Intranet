@@ -69,7 +69,7 @@ async function atualizarPublicacao(evento) {
         imagem: imagem.src
     }
     console.log(JSON.stringify(publicacoes));
-    const resultado = await fetch(`http://localhost:3000/publicacao/${idpublicacao}`, {
+    const resultado = await fetch(`https://api-intranet.vercel.app/publicacao/${idpublicacao}`, {
         method: "PUT",
         headers: {
             "Content-type": "application/json"

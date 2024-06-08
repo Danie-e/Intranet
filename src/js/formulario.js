@@ -2,44 +2,39 @@ import { funcoes } from "./funcoes.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
     const idFormulario = funcoes.acharCookie("idFormulario=")
-    const dadosFormulario = await fetch(`http://localhost:3000/formulario/${idFormulario}`);
+    const dadosFormulario = await fetch(`https://api-intranet.vercel.app/formulario/${idFormulario}`);
     const elemento = await dadosFormulario.json();
 
     console.log(elemento);
 
     document.getElementById('nomePagina').innerHTML = elemento.titulo;
     document.getElementById('nomeFormulario').innerHTML = elemento.titulo;
+    const form = document.getElementById('inputs');
 
-    // buttonCriar.onclick = async function () {
-    //     const nomeFormulario = document.getElementById('nomeFormulario').value;
-    //     let formulario = document.getElementById('criarFormularios');
+    const inputs = elemento.formHtml.split(" ");
+    var valor = 0;
 
-    //     let valores = [].map.call(formulario, function (input) {
-    //         return ` ${input.name} ${input.value}`;
-    //     });
-    //     const autor = funcoes.acharCookie("id=");
-    //     const corpo = {
-    //         titulo: nomeFormulario,
-    //         autor: autor,
-    //         formHtml: conteudo,
-    //         conteudo: valores
-    //     }
-    //     console.log(await JSON.stringify(corpo));
+    console.log(inputs)
+    inputs.forEach(element => {
+        if (element == "inputText") {
+            form.innerHTML += `
+            <label>${elemento.conteudo[valor]}
+            <input type="text" name="labelText" placeholder="Digite aqui sua resposta">
+            </label> `;
+            valor += 1;
+        } else if (element == "inputRadio") {
+            form.innerHTML += `<p> ${elemento.conteudo[valor]}</p>
+            <label for="valor1"><input type="radio" name="inputRadio" value="valor1">${elemento.conteudo[valor+1]}</label>
+            <label for="valor2"><input type="radio" name="inputRadio" value="valor2"
+                    placeholder="Digite aqui a label do campo texto"> <input type="text"
+                    placeholder="Digite o valor do 2° campo"></label>
+            <label for="valor3"><input type="radio" name="inputRadio" value="valor3"
+                    placeholder="Digite aqui a label do campo texto"> <input type="text"
+                    placeholder="Digite o valor do 3° campo"></label>
+            <label for="valor4"><input type="radio" name="inputRadio" value="valor4"
+                    placeholder="Digite aqui a label do campo texto"> <input type="text"
+                    placeholder="Digite o valor do 4° campo"></label>`
+        }
+    });
 
-    //     const result = await fetch("http://localhost:3000/formulario", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-type": "application/json"
-    //         },
-    //         body: JSON.stringify(corpo),
-    //     })
-    //     const resultado = await result.json();
-    //     if (resultado.status == 201) {
-    //         alert(resultado.message);
-    //         window.location.href = './paginaInicial.html';
-    //     }
-    //     else {
-    //         alert(resultado.message);
-    //     }
-    // }
 });

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 async function carregarTodasPublicacaoes() {
-    const result = await fetch("http://localhost:3000/publicacao")
+    const result = await fetch("https://api-intranet.vercel.app/publicacao")
 
     const publicacoes = await result.json();
     publicacoes.forEach(element => {
@@ -47,7 +47,7 @@ async function carregarTodasPublicacaoes() {
 }
 
 async function deletarPublicacao(id) {
-    const result = await fetch(`http://localhost:3000/publicacao/${id}`, {
+    const result = await fetch(`https://api-intranet.vercel.app/publicacao/${id}`, {
         method: "DELETE",
         headers: {
             "Content-type": "application/json"

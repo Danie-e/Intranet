@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
     const carrossel = document.getElementById('carrossel');
-    const publicacao = await fetch("http://localhost:3000/publicacao")
+    const publicacao = await fetch("https://api-intranet.vercel.app/publicacao")
 
     const publicacoes = await publicacao.json();
     publicacoes.forEach(element => {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div> `
     });
 
-    const formulario = await fetch("http://localhost:3000/formulario")
+    const formulario = await fetch("https://api-intranet.vercel.app/formulario")
     const formularios = await formulario.json();
     formularios.forEach(element => {
         carrossel.innerHTML += `

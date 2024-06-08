@@ -42,7 +42,7 @@ async function salvarPublicacao(evento) {
         categorias: categoria
     }
 
-    const result = await fetch("http://localhost:3000/publicacao", {
+    const result = await fetch("https://api-intranet.vercel.app/publicacao", {
         method: "POST",
         headers: {
             "Content-type": "application/json"

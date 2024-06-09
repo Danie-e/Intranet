@@ -80,10 +80,14 @@
 
 #categoriaSugestaoPdi {
     margin-left: 30px;
+    display: flex;
+
 }
 
 #categoriaSugestaoPdi button{
     background: #1C8394;
+    border-radius: 15%;
+    margin: 10px;
     
 }
 

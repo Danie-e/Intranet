@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { pdi } from "../models/PDI.js";
 import { usuarios } from "../models/Usuario.js";
 
@@ -85,7 +86,7 @@ class PDIController {
     static async excluirPDI(req, res) {
         try {
             const id = req.params.id; // o req.body.id dependiendo de cómo envíes el ID
-            const filtro = { "_id": ObjectId(id) };
+            const filtro = { "_id": new ObjectId(id) };
     
             const resultado = await pdi.deleteOne(filtro);
     

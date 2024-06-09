@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     pdiList.forEach(pdi => {
 
         if (!pdi.status){
-            const buttonText = pdi.status ? "Feito" : "Concluir ação";
+            //const buttonText = pdi.status ? "Feito" : "Concluir ação";
     
             document.getElementById('todosPdis').innerHTML +=
                 `
@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                             </a>
                         </div>
                         
-                        <button>
-                            ${buttonText}
+                        <button onclick="concluirPDI('${pdi._id}')">
+                            Concluir Tarefa
                         </button>
                     </div>
                     </div>
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <div class="rodape">
                         <p class="prazo">Prazo: ${pdi.prazo}</p>
                         <div class="botoesRodape">
-                            <button><img src="/img/Icons/edit.svg" alt=""></button>
+                            <button onclick="alterarPDI('${pdi._id}')"><img src="/img/Icons/edit.svg" alt=""></button>
                             <button onclick="excluirPDIdobanco('${pdi._id}')" ><img src="/img/Icons/deleteazul.png" alt=""></button>
                         </div>
                     </div>
@@ -68,8 +68,56 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
-async function alterarPDI(req) {
-    alert("PDI criado com sucesso");
+async function alterarPDI(req, campo) {
+
+    if(campo == "status"){
+        alert(req);
+
+    }
+
+    var titulo = document.getElementById('adcTitulo').value;
+    var subtitulo = document.getElementById('adcArea').value;
+    var conteudo = document.getElementById('adcConteudo').value;
+    var prazo = document.getElementById('adcPrazo').value;
+    var tituloTarefa1 = document.getElementById('cAdcNomeTarefa1').value;
+    var linkTarefa1 = document.getElementById('cAdcLink1').value;
+
+
+    var pdi = {
+        titulo: "testeleticiapdialterar",
+        subtitulo: subtitulo,
+        conteudo: conteudo,
+        prazo: prazo,
+        tituloTarefa1: tituloTarefa1,
+        linkTarefa1: linkTarefa1,
+        //status: false,
+        //autor: localStorage.getItem("usuarioLocal"),
+    }
+    // alert(JSON.stringify(publicacoes));
+    const result = await fetch("http://localhost:3000/pdi/"+req, {
+        method: "PUT",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(pdi)
+    });
+    console.log(result);
+    if (result.ok) {
+        alert("PDI criado com sucesso");
+        window.open("./meusPdis.html");
+    }
+    else {
+        alert(`${result.message} - Não foi possivel criar PDI!`);
+    }
+
+    
+};
+
+async function concluirPDI(req) {
+
+    alterarPDI(req, "status");
+
+    
 };
 
 async function excluirPDIdobanco(req) {
@@ -88,6 +136,7 @@ async function excluirPDIdobanco(req) {
   })
   .then(() => {
     console.log('Recurso excluído com sucesso');
+    //atualizar a tela 
   })
   .catch(error => {
     console.error('Erro ao tentar excluir o recurso:', error);

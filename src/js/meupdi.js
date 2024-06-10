@@ -68,48 +68,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
-async function alterarPDI(req, campo) {
+async function alterarPDI(req) {
 
-    if(campo == "status"){
-        alert(req);
+    localStorage.setItem("IdPdiAlterar", req);
 
-    }
-
-    var titulo = document.getElementById('adcTitulo').value;
-    var subtitulo = document.getElementById('adcArea').value;
-    var conteudo = document.getElementById('adcConteudo').value;
-    var prazo = document.getElementById('adcPrazo').value;
-    var tituloTarefa1 = document.getElementById('cAdcNomeTarefa1').value;
-    var linkTarefa1 = document.getElementById('cAdcLink1').value;
-
-
-    var pdi = {
-        titulo: "testeleticiapdialterar",
-        subtitulo: subtitulo,
-        conteudo: conteudo,
-        prazo: prazo,
-        tituloTarefa1: tituloTarefa1,
-        linkTarefa1: linkTarefa1,
-        //status: false,
-        //autor: localStorage.getItem("usuarioLocal"),
-    }
-    // alert(JSON.stringify(publicacoes));
-    const result = await fetch("http://localhost:3000/pdi/"+req, {
-        method: "PUT",
-        headers: {
-            "Content-type": "application/json"
-        },
-        body: JSON.stringify(pdi)
-    });
-    console.log(result);
-    if (result.ok) {
-        alert("PDI criado com sucesso");
-        window.open("./meusPdis.html");
-    }
-    else {
-        alert(`${result.message} - Não foi possivel criar PDI!`);
-    }
-
+    window.open("./EditarPDI.html");
     
 };
 
@@ -135,8 +98,11 @@ async function excluirPDIdobanco(req) {
     return response.json(); // Não precisamos do JSON da resposta para uma requisição DELETE
   })
   .then(() => {
+
+    window.location.reload(false);
     console.log('Recurso excluído com sucesso');
     //atualizar a tela 
+  
   })
   .catch(error => {
     console.error('Erro ao tentar excluir o recurso:', error);

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     var sugestaopdiLocal = localStorage.getItem("sugestaopdi");
 
-    localStorage.setItem("idPdi", "teste");
+    //localStorage.setItem("idPdi", "teste");
 
     pdiList.forEach(pdi => {
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 <p class="prazo">Prazo: <input type="date" placeholder="adicione o prazo" id="adcPrazo"></p>
 <div class="botoesRodape2">
     <button onclick="salvarPDI().alert('teste')">Confirmar</button>
-    <button onclick="()=>{alert('Cancelando cadastro de publicação.')}">Cancelar</button>
+    <a href="MeusPDIs.html"><button>Cancelar</button></a>
 </div>
 </div>
                 

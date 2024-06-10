@@ -49,7 +49,7 @@ atualizarUsuario.addEventListener("click", async function () {
     const result = await resultado.json();
     if (result.status = 200) {
         alert(result.message);
-        window.location.href = "paginaInicial.html"
+        window.location.href = "CRUD_Usuario.html"
     }
     else
         alert(result.message)

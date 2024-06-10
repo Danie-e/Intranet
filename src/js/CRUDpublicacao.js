@@ -69,7 +69,6 @@ function editarPublicacao(id) {
     document.cookie = `editarPublicacao = ${id}; path = /`;
 }
 
-
 var card = document.getElementById('EdicaoPublicacoes');
 card.onclick = function (elemento) {
     if (elemento.target == "[object HTMLDivElement]")

@@ -78,13 +78,35 @@ async function alterarPDI(req) {
 
 async function concluirPDI(req) {
 
-    alterarPDI(req, "status");
+
+
+    var pdi = {
+      
+        status: true,
+
+    }
+    // alert(JSON.stringify(publicacoes));
+    const result = await fetch("http://localhost:3000/pdi/"+req, {
+        method: "PUT",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(pdi)
+    });
+    console.log(result);
+    if (result.ok) {
+        alert("PDI concluido com sucesso");
+        window.open("./meusPdis.html");
+    }
+    else {
+        alert(`${result.message} - Não foi possivel concluir o PDI!`);
+    }
 
     
 };
 
 async function excluirPDIdobanco(req) {
-    alert("teste com sucesso sera???");
+    //alert("teste com sucesso sera???");
 
     //fetch("http://localhost:3000/pdi/"+req){method: 'delete'};
 

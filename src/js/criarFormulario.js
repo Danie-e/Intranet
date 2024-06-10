@@ -1,27 +1,27 @@
 import { funcoes } from "./funcoes.js";
-
-var conteudo='';
+var arquivoImagem = '';
+var conteudo = '';
 const buttonModal = document.getElementById('adicionarInput');
 const inputs = document.getElementById('modal');
 const buttonCriar = document.getElementById('criarFormulario');
 
 buttonCriar.onclick = async function () {
-    const nomeFormulario= document.getElementById('nomeFormulario').value;
+    const nomeFormulario = document.getElementById('nomeFormulario').value;
     let formulario = document.getElementById('criarFormularios');
 
     let valores = [].map.call(formulario, function (input) {
-        return` ${input.name} ${input.value}`;
+        return `${input.value}`;
     });
     const autor = funcoes.acharCookie("id=");
     const corpo = {
         titulo: nomeFormulario,
         autor: autor,
         formHtml: conteudo,
-        conteudo: valores
+        conteudo: valores,
+        imagem: arquivoImagem
     }
-    console.log(await JSON.stringify(corpo));
 
-    const result = await fetch("http://localhost:3000/formulario", {
+    const result = await fetch("https://api-intranet.vercel.app/formulario", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -29,7 +29,7 @@ buttonCriar.onclick = async function () {
         body: JSON.stringify(corpo),
     })
     const resultado = await result.json();
-    if (resultado.status == 201) {
+    if (result.status == 201) {
         alert(resultado.message);
         window.location.href = './paginaInicial.html';
     }
@@ -50,25 +50,21 @@ inputs.onclick = function (elemento) {
         form.innerHTML += `    
             <p for="labelText">Campo de texto</p>
             <input type="text" name="labelText" placeholder="Digite aqui a label do campo texto"> `;
-        conteudo+="inputText ";
+        conteudo += "inputText ";
     }
     else if (elemento.target.id == "inputRadio") {
         form.innerHTML += ` 
         <p> Digite a pegunta e o valores de cada opção</p>
             <input type="text" name="nomeInputRadio" placeholder="Digite aqui a label do campo radio">
-            <label for="valor1"><input type="radio" name="inputRadio" value="valor1"
-                    placeholder="Digite aqui a label do campo texto"> <input type="text"
-                    placeholder="Digite o valor do 1° campo"></label>
-            <label for="valor2"><input type="radio" name="inputRadio" value="valor2"
-                    placeholder="Digite aqui a label do campo texto"> <input type="text"
-                    placeholder="Digite o valor do 2° campo"></label>
-            <label for="valor3"><input type="radio" name="inputRadio" value="valor3"
-                    placeholder="Digite aqui a label do campo texto"> <input type="text"
-                    placeholder="Digite o valor do 3° campo"></label>
-            <label for="valor4"><input type="radio" name="inputRadio" value="valor4"
-                    placeholder="Digite aqui a label do campo texto"> <input type="text"
-                    placeholder="Digite o valor do 4° campo"></label> `;
-        conteudo+="inputRadio ";
+            
+            <label for="valor1">  <input type="text" placeholder="Digite o valor do 1° campo"></label>
+            
+            <label for="valor2">  <input type="text" placeholder="Digite o valor do 2° campo"></label>
+            
+            <label for="valor3">  <input type="text"placeholder="Digite o valor do 3° campo"></label>
+            
+            <label for="valor4"> <input type="text" placeholder="Digite o valor do 4° campo"></label> `;
+        conteudo += "inputRadio ";
 
     }
     else if (elemento.target.id == "inputCheckbox") {
@@ -76,25 +72,46 @@ inputs.onclick = function (elemento) {
         <p>Digite os valores de cada opção</p>
         <input type="text" name="nomeInputRadio" placeholder="Digite aqui a label do campo checkbox">
            
-            <label for="valor1"><input type="checkbox" name="inputCheckbox" value="valor1"
-            placeholder="Digite aqui a label do campo texto"><input type="text" placeholder="Digite o valor do 1° campo"></label>
+            <label for="valor1">
+            <input type="text" placeholder="Digite o valor do 1° campo">
+            </label>
            
-            <label for="valor2"> <input type="checkbox" name="inputCheckbox" value="valor2"
-            placeholder="Digite aqui a label do campo texto"><input type="text" placeholder="Digite o valor do 2° campo"></label>
+            <label for="valor2"> 
+            <input type="text" placeholder="Digite o valor do 2° campo">
+            </label>
             
-            <label for="valor3"><input type="checkbox" name="inputCheckbox" value="valor3"
-            placeholder="Digite aqui a label do campo texto"><input type="text" placeholder="Digite o valor do 3° campo"></label>
+            <label for="valor3">
+            <input type="text" placeholder="Digite o valor do 3° campo">
+            </label>
             
-            <label for="valor4"><input type="checkbox" name="inputCheckbox" value="valor4"
-            placeholder="Digite aqui a label do campo texto"><input type="text" placeholder="Digite o valor do 4° campo"></label> `;
-        conteudo+="inputCheckbox ";
+            <label for="valor4">
+            <input type="text" placeholder="Digite o valor do 4° campo">
+            </label> `;
+        conteudo += "inputCheckbox ";
     }
     else if (elemento.target.id == "inputDate") {
         form.innerHTML += `
         <p for="inputData">Campo de data</p>
         <input type="text" nome="inputData" placeholder="Digite aqui a label para o campo de data"> `
-        conteudo+="inputDate ";
+        conteudo += "inputDate ";
     }
 
     inputs.style.display = 'none';
+}
+
+const imagem = document.getElementById('enviarImagem')
+const foto = document.getElementById('foto')
+foto.addEventListener("change", previewFile);
+
+function previewFile({ target }) {
+    const file = target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+        imagem.src = reader.result;
+        arquivoImagem = reader.result;
+        imagem.style.display = "block";
+    };
 }

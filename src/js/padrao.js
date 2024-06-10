@@ -1,13 +1,12 @@
 var menu = document.querySelector('#menuLateral');
-var container = document.querySelector('#menu_superior');
+var container = document.querySelector('#menu_completo');
 
 menu.addEventListener('click', function () {
 
-    if (container.style.display === 'flex') {
+    if (container.style.display === 'block') {
         container.style.display = 'none';
     }
     else {
-        container.style.display = 'flex';
+        container.style.display = 'block';
     }
 })
-

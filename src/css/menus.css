@@ -1,5 +1,20 @@
 
 /* Cabeçalho */
+
+#menu_completo {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--color-branco);
+    padding: 20px;
+}
+
+#menu_completo button {
+    display: flex;
+    background-color: var(--color-transparente);
+    border-color: var(--color-transparente);
+}
+
 .menuSuperior {
     height: 60px;
     width: initial;
@@ -26,7 +41,11 @@
 .menuLateral {
     margin-top: 10px;
 }
+.item a{
+    text-decoration: none;
+    color: black;
 
+}
 .icones {
     padding: 10px;
     height: 45px;
@@ -38,17 +57,7 @@
     width: 45px;
 }
 
-.menu_completo {
-    display: block;
-    flex-direction: column;
-}
-
-.menu_completo button {
-    display: flex;
-    background-color: var(--color-transparente);
-    border-color: var(--color-transparente);
-}
 
 #menu_superior {
-    display: none;
+    display: flex;
 }

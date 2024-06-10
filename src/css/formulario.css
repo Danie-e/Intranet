@@ -19,10 +19,18 @@ main {
     margin-bottom: 30px;
 }
 
-#enviarImagem {
-    display: none;
+#imagemFormulario {
     width: -webkit-fill-available;
     height: 200px;
+}
+
+.labelTexto {
+    display: block;
+}
+
+.labelTexto input {
+    width: -webkit-fill-available;
+    margin-top: 10px;
 }
 
 input {
@@ -36,22 +44,11 @@ input {
     border-top: 1px solid;
 }
 
-
-.opcao>* {
-    pointer-events: none;
-}
-
-.adicionar {
+input[type=text] {
     display: block;
-    width: -webkit-fill-available;
 }
 
-.modal {
-    display: none;
-    border: 2px solid black;
-    position: absolute;
-    width: 80%;
-    padding: 1%;
-    margin: 10%;
-    background-color: var(--color-branco);
+label {
+    display: flex;
+    align-items: center;
 }

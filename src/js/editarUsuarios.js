@@ -38,7 +38,7 @@ atualizarUsuario.addEventListener("click", async function () {
         imagem: img
     };
 
-    const resultado = await fetch(`http://localhost:3000/usuarios/${idUsuario}`, {
+    const resultado = await fetch(`https://api-intranet.vercel.app/usuarios/${idUsuario}`, {
         method: "PUT",
         headers: {
             "Content-type": "application/json"

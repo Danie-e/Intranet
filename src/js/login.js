@@ -1,6 +1,6 @@
 
 async function validarUsuario() {
-    const result = await fetch("http://localhost:3000/usuarios")
+    const result = await fetch("https://api-intranet.vercel.app/usuarios")
     console.log(result);
     const usuarios = await result.json();
     let nomeUsuario = document.getElementById('usuario');

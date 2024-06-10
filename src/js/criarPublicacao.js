@@ -42,7 +42,7 @@ async function salvarPublicacao(evento) {
         categorias: categoria
     }
 
-    const result = await fetch("http://localhost:3000/publicacao", {
+    const result = await fetch("https://api-intranet.vercel.app/publicacao", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -74,5 +74,6 @@ function previewFile({ target }) {
     reader.onload = () => {
         imagem.src = reader.result;
         arquivoImagem = reader.result;
+        imagem.style.display="block";
     };
 }

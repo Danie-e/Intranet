@@ -9,7 +9,19 @@
 }
 
 .carrossel {
+    position: relative;
     display: flex;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 5%;
+}
+.cardFormulario{
+    background-color: var(--color-fundo);
+    position: sticky;
+    left: 0;
+    flex-shrink: 0;
+    object-fit: cover;
+    scroll-behavior: smooth;
 }
 
 .novasPublicacoes {
@@ -28,9 +40,7 @@
 .cardFormulario>* {
 pointer-events: none;
 }
-.cardFormulario__Titulo{
-    
-}
+
 .cardFormulario__Imagem {
     width: 100px;
     height: 100px;

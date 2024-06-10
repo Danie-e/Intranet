@@ -14,13 +14,35 @@ async function criarQuiz() {
 
     for(var i = 1; i <= numQuestao; i++){
 
+        var opcao1 = false;
+        var opcao2 = false;
+        var opcao3 = false;
+        var opcao4 = false;
+
+        if(document.getElementById(`opcao1${i}`).checked){
+            opcao1 = true;
+        }
+        else if(document.getElementById(`opcao2${i}`).checked){
+            opcao2 = true;
+        }
+        else if(document.getElementById(`opcao3${i}`).checked){
+            opcao3 = true;
+        }
+        else if(document.getElementById(`opcao4${i}`).checked){
+            opcao4 = true;
+        }
+        else{
+            alert("Selecione uma Questão certa");
+            callback();
+        }
+
         varDadosQuestoes = [
             varImagem = document.getElementById(`imagem${i}`).value,
             varTextoQuestao = document.getElementById(`textoQuestao${i}`).value,
-            varOpcao = [document.getElementById(`opcao1${i}`).value,
-                        document.getElementById(`opcao2${i}`).value,
-                        document.getElementById(`opcao3${i}`).value,
-                        document.getElementById(`opcao4${i}`).value],
+            varOpcao = [opcao1,
+                        opcao2,
+                        opcao3,
+                        opcao4],
             varTextoOpcao = [document.getElementById(`textoOpcao1${i}`).value,
                             document.getElementById(`textoOpcao2${i}`).value,
                             document.getElementById(`textoOpcao3${i}`).value,
@@ -56,6 +78,8 @@ async function criarQuiz() {
     else {
         alert(resultado.message);
     }
+
+    window.location.href = 'paginaInicial.html';
 }
 
 
@@ -68,16 +92,16 @@ function adicionarQuestao() {
     <input type="file" accept="image/png" class="imagem" id="imagem${numQuestao+1}" name="imagem">
     <label for="textoQuestao" class="labelTextoQuestao" id="labelTextoQuestao">Insira aqui o texto da questão</label>
     <input type="text" class="textoQuestao" id="textoQuestao${numQuestao+1}" name="textoQuestao">
-    <input type="checkbox" class="opcao" id="opcao1${numQuestao+1}" name="opcao">
+    <input type="radio" class="opcao" name="${numQuestao+1}" id="opcao1${numQuestao+1}" name="opcao">
     <label for="opcao1" class="labelOpcao" id="labelOpcao">Opção 1</label>
     <input type="text" class="textoOpcao" id="textoOpcao1${numQuestao+1}" placeholder="Insira aqui o texto da opção">
-    <input type="checkbox" class="opcao" id="opcao2${numQuestao+1}" name="opcao">
+    <input type="radio" class="opcao" name="${numQuestao+1}" id="opcao2${numQuestao+1}" name="opcao">
     <label for="opcao1" class="labelOpcao" id="labelOpcao">Opção 2</label>
     <input type="text" class="textoOpcao" id="textoOpcao2${numQuestao+1}" placeholder="Insira aqui o texto da opção">
-    <input type="checkbox" class="opcao" id="opcao3${numQuestao+1}" name="opcao">
+    <input type="radio" class="opcao" name="${numQuestao+1}" id="opcao3${numQuestao+1}" name="opcao">
     <label for="opcao1" class="labelOpcao" id="labelOpcao">Opção 3</label>
     <input type="text" class="textoOpcao" id="textoOpcao3${numQuestao+1}" placeholder="Insira aqui o texto da opção">
-    <input type="checkbox" class="opcao" id="opcao4${numQuestao+1}" name="opcao">
+    <input type="radio" class="opcao" name="${numQuestao+1}" id="opcao4${numQuestao+1}" name="opcao">
     <label for="opcao1" class="labelOpcao" id="labelOpcao">Opção 4</label>
     <input type="text" class="textoOpcao" id="textoOpcao4${numQuestao+1}" placeholder="Insira aqui o texto da opção">`
     //<input type="button" id="botaoAdicionarOpcao" value="+">`

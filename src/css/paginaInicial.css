@@ -9,7 +9,7 @@
 }
 
 .carrossel {
-    position: relative;
+    /* position: relative; */
     display: flex;
     overflow: auto;
     scroll-snap-type: x mandatory;
@@ -17,7 +17,7 @@
 }
 .cardFormulario{
     background-color: var(--color-fundo);
-    position: sticky;
+    /* position: sticky; */
     left: 0;
     flex-shrink: 0;
     object-fit: cover;

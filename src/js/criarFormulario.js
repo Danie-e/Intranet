@@ -29,7 +29,7 @@ buttonCriar.onclick = async function () {
         body: JSON.stringify(corpo),
     })
     const resultado = await result.json();
-    if (resultado.status == 201) {
+    if (result.status == 201) {
         alert(resultado.message);
         window.location.href = './paginaInicial.html';
     }
@@ -112,5 +112,6 @@ function previewFile({ target }) {
     reader.onload = () => {
         imagem.src = reader.result;
         arquivoImagem = reader.result;
+        imagem.style.display = "block";
     };
 }

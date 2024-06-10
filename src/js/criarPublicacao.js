@@ -74,5 +74,6 @@ function previewFile({ target }) {
     reader.onload = () => {
         imagem.src = reader.result;
         arquivoImagem = reader.result;
+        imagem.style.display="block";
     };
 }

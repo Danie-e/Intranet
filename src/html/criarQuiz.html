@@ -43,18 +43,13 @@
                 <input type="text" id="nomeQuiz" placeholder="Insira o nome do Quiz">
             </div>
             <div id="questao">
-                <h2>Questão 1</h2>
-                <label for="imagem" id="labelImagem">Insira aqui a Imagem</label>
-                <input type="file" accept="image/png" id="imagem" name="imagem">
-                <label for="textoQuestao" id="labelTextoQuestao">Insira aqui o texto da questão</label>
-                <input type="text" id="textoQuestao" name="textoQuestao">
-                <input type="checkbox" id="opcao" name="opcao">
-                <label for="opcao1" id="labelOpcao">Opção 1</label>
-                <input type="text" id="textoOpcao" placeholder="Insira aqui o texto da opção">
-                <input type="button" id="botaoAdicionarOpcao" value="+">
+                
+            </div>
+            <div id="botao">
+                <input type="button" onclick="adicionarQuestao()" id="botaoAdicionarQuestao" value="+">
             </div>
             <div>
-                <input type="button" onclick="criarQuiz()" id="botaoAdicionarQuestao" value="+">
+                <input type="button" onclick="criarQuiz()" id="botaoCriarQuiz" value="Confirmar">
             </div>
 
         </main>

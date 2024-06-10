@@ -9,38 +9,38 @@
     font-size: 20px;
 }
 
-#labelImagem {
+.labelImagem {
     display: block;
     margin: 30px 0px 10px 0px;
 }
 
-#imagem{
+.imagem{
     display: block;
 }
 
-#labelTextoQuestao {
+.labelTextoQuestao {
     display: block;
     margin: 30px 0px 10px 0px;
 }
 
-#textoQuestao {
+.textoQuestao {
     display: block;
-    width: 1410px;
+    width: 1390px;
     height: 35px;
     margin: auto;
 }
 
-#opcao {
+.opcao {
     margin: 30px 0px 30px 0px;
     width: 15px;
     height: 15px;
 }
 
-#labelOpcao {
+.labelOpcao {
     padding: 5px;
 }
 
-#textoOpcao {
+.textoOpcao {
     margin-right: 30px;
 }
 
@@ -62,4 +62,17 @@
     padding: 10px;
     margin: 30px;
     border: 1px solid black;
+}
+
+#botaoCriarQuiz {
+    display: block;
+    margin: auto;
+    width: 1435px;
+    height: 35px;
+    background-color: white;
+}
+
+#botao {
+    margin-top: 10px;
+    margin-bottom: 30px;
 }

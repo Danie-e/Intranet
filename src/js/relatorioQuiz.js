@@ -20,8 +20,8 @@ async function exibeQuizCriados() {
         `<section id="cardQuiz">
             <div>
                 <p id="nomeQuiz">${resultado[i].varNomeQuiz}</p>
-                <p id="porcentagem">81%</p>
-                <button type="button" id="entraQuiz" onclick="entraQuiz(resultado[${i}]._id)">Verificar Respostas</button>
+                <!--<p id="porcentagem">81%</p>-->
+                <button type="button" id="entraQuiz" onclick="entraQuiz(resultado[${i}]._id)">Responder Quiz</button>
             </div>    
         </section>`
 

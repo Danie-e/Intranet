@@ -22,7 +22,7 @@ async function carregaNomeQuiz(){
             numQuiz = i;
 
             document.getElementById("areaTexto").innerHTML +=
-            `<h1>Deseja iniciar o ${resultado[numQuiz].varNomeQuiz}</h1>`
+            `<h1>Deseja iniciar o "${resultado[numQuiz].varNomeQuiz}"</h1>`
             console.log(resultado[numQuiz].varNomeQuiz);
         }
     }

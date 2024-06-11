@@ -42,6 +42,15 @@ async function validarUsuario() {
     
     localStorage.setItem("usuarioLocal", idUsuarioLocal);
 
+    var categoriaUsuarioLocal
+
+    usuarios.forEach(usuario => {
+        if(usuario.nome == nomeUsuario.value){
+            categoriaUsuarioLocal = usuario.equipe;
+        }
+    });
+    localStorage.setItem("categoriaUsuarioLocal", categoriaUsuarioLocal);
+
 
     if (index > 0) {
         // window.open("./html/paginaInicial.html");

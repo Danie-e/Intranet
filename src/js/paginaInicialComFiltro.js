@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     const publicacoes = await result.json();
     publicacoes.forEach(element => {
 
+        var categoriaPost = element.categorias
+
+        if(categoriaPost.includes(categoriaUsuarioLocal)){
+            
+
 
         document.getElementById('paginaInicialPublicacoes').innerHTML +=
             `
@@ -34,6 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
 
         `
+        }
 
     });
 })

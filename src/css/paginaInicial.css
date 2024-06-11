@@ -20,6 +20,16 @@
     display: none;
 }
 
+#filtroCategoria{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#filtroCategoria a {
+    margin: 20px;
+}
+
 .publicacao{
     margin: 2% 2% 2% 5%;
     border-style: double;

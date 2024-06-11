@@ -18,7 +18,7 @@ var questaoRespondida = [];
 
 async function carregaRespostasQuiz(){
 
-    const result = await fetch("http://localhost:3000/quiz")
+    const result = await fetch("https://api-intranet.vercel.app/quiz")
     resultado = await result.json();
     console.log (resultado);
 

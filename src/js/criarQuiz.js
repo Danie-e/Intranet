@@ -62,7 +62,7 @@ async function criarQuiz() {
         //varTextoOpcao: varTextoOpcao
     }
 
-    const result = await fetch("http://localhost:3000/quiz", {
+    const result = await fetch("https://api-intranet.vercel.app/quiz", {
         method: "POST",
         headers: {
             "Content-type": "application/json"

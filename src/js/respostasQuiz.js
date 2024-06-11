@@ -261,7 +261,7 @@ function selecionaResposta(numQuiz, questao, alternativa) {
 
     questoesFeitas++;
 
-    if(questoesFeitas == ((resultado[numQuiz].varQuestoes[questao][2].length)-1)){
+    if(questoesFeitas == ((resultado[numQuiz].varQuestoes.length))){
         setTimeout(() => {
             gerarResultado();
           }, 1000);

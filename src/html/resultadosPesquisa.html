@@ -34,7 +34,7 @@
         <ul class="menu">
             <li>
                 <input id="inputPesquisa" type="Pesquise por um post">
-                <button onclick="pesquisarPublicacao()"><img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa"></button>
+                <button id="PesquisaMenuButton" onclick="pesquisarPublicacao()"><img id="PesquisaMenuImg" src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa"></button>
             </li>
             <li>
                 <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
@@ -151,19 +151,14 @@
     </nav>
     <!--  -->
 
-    <main>
-        
 
-        <div id="categoriasPosts">
-            
-        </div>
-        
+    <main>
         <section id="paginaInicialPublicacoes">
-            <p class="novasPublicacoes">Novas Publicações</p>
+            <p class="novasPublicacoes">Resultados da sua Pesquisa</p>
         </section>
     </main>
 
-    <script src="../js/paginaInicialComFiltro.js"></script>
+    <script src="../js/resultadosPesquisa.js"></script>
     <script src="../js/padrao.js"></script>
 
 </body>

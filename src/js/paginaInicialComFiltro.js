@@ -1,40 +1,68 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
-    const result = await fetch("https://api-intranet.vercel.app/publicacao")
+    const carrossel = document.getElementById('carrossel');
+    const publicacao = await fetch("https://api-intranet.vercel.app/publicacao")
 
-    var categoriaUsuarioLocal = localStorage.getItem("categoriaUsuarioLocal");
 
-    document.getElementById('filtroCategoria').innerHTML +=`
-            <a href="paginaInicialComFiltro.html"><button>${categoriaUsuarioLocal}</button></a>
-            <a href="paginaInicial.html"><button>Todos os Post's</button></a> `;
 
-    const publicacoes = await result.json();
+  
+
+    const publicacoes = await publicacao.json();
     publicacoes.forEach(element => {
 
-        var categoriaPost = element.categorias
+        let categorias = `${element.categorias}`;
+        const arrayCategorias = categorias.split(' ');
+        var listaCategorias = '';
+        arrayCategorias.forEach(elemento => {
+            listaCategorias += ` <li> ${elemento} </li> `
+        });
 
-        if(categoriaPost.includes(categoriaUsuarioLocal)){
-            
-        document.getElementById('paginaInicialPublicacoes').innerHTML +=
-            `
-            <div class="publicacao">
-                <img src="../img/Icons/account_circle.svg">
-                <div class="card">
+        var img = element.autor.imagem != '' ? element.autor.imagem : "../img/Icons/account_circle.svg";
+        document.getElementById('paginaInicialPublicacoes').innerHTML += `
+            <div class="card" id="${element._id}">
+                <img src="${img}" id="imagem">
+                <div class="publicacao">
                     <h3 class="tituloCard">${element.titulo}</h2>
                         <p class="descricaoCard">${element.descricao}</p>
                         <div class="favoritoCategorias">
-                            <ul>
-                                <li>
-                                    ${element.categorias}
-                                </li>
+                            <ul id="categorias">
+                               ${listaCategorias}
                             </ul>
                             <button class="favoritar"></button>
                         </div>
                 </div>
-            </div>
-
-        `
-        }
-
+            </div> `
     });
-})
+
+    const formulario = await fetch("https://api-intranet.vercel.app/formulario")
+    const formularios = await formulario.json();
+    formularios.forEach(element => {
+        carrossel.innerHTML += `
+        <div class="cardFormulario" id="${element._id}">
+            <img src="${element.imagem}" class="cardFormulario__Imagem">
+            <h2 class="cardFormulario__Titulo">${element.titulo}</h2>
+            <p class="cardFormulario__Paragrafo">Novo Formulario</p>
+        </div>
+        `;
+    });
+});
+
+var card = document.getElementById('paginaInicialPublicacoes');
+card.onclick = function (elemento) {
+    window.location.href = 'publicacao.html';
+    document.cookie = `idPublicacao=${elemento.target.id}; path=/`;
+};
+
+
+var cardFormulario = document.getElementById('carrossel');
+cardFormulario.onclick = function (elemento) {
+    window.location.href = 'formulario.html';
+    document.cookie = `idFormulario=${elemento.target.id}; path=/`;
+};
+
+
+async function pesquisarPublicacao() {
+    var req = document.getElementById('inputPesquisa').value;
+    localStorage.setItem("filtroPesquisa", req);
+    window.location.href = "./resultadosPesquisa.html";
+};

@@ -1,0 +1,72 @@
+@import url(styles.css);
+@import url(menus.css);
+
+h1 {
+    padding: 15px;
+    margin: 2rem 2rem;
+    text-align: center;
+    background-color: var(--color-verde-intermediario);
+    font-size: 1.5rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.campos {
+    margin: auto;
+    padding: 2%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-verde-medio);
+}
+
+.formulario label {
+    display: flex;
+    margin-top: 10px;
+}
+
+.formulario input[type=file]
+{
+display: flex;
+width: 150px;
+margin: auto;
+align-content: end;
+border: 1px solid black;
+background-color: var(--color-fundo);
+}
+
+#imagem {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    align-content: end;
+    border: 1px solid black;
+}
+#enviarImagem{
+      display: block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    align-content: end;
+    border: 1px solid black;
+}
+
+.dividirDiv {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.secao {
+    display: flex;
+    flex-direction: column;
+}
+
+.confirmar {
+    margin: 2% 5%;
+
+}

@@ -4,11 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/crudPublicacao.css">
-    <title>Editar Publicação</title>
+    <link rel="stylesheet" href="../css/criarFormulario.css">
+    <title>Criar Formulario</title>
 </head>
 
 <body>
+    <section class="modal" id="modal">
+        <div class="opcao input" id="inputText">
+            <p for="labelText">Campo de texto</p>
+            <input type="text" name="labelText" placeholder="Digite aqui a label do campo texto">
+        </div>
+
+        <div class="opcao input" id="inputRadio">
+            <p> Digite a pegunta e o valores de cada opção</p>
+            <input type="text" name="nomeInputRadio" placeholder="Digite aqui a label do campo radio">
+            <label for="valor1"><input type="radio" name="inputRadio" value="valor1"
+                    placeholder="Digite aqui a label do campo texto"> <input type="text"
+                    placeholder="Digite o valor do 1° campo"></label>
+            <label for="valor2"><input type="radio" name="inputRadio" value="valor2"
+                    placeholder="Digite aqui a label do campo texto"> <input type="text"
+                    placeholder="Digite o valor do 2° campo"></label>
+            <label for="valor3"><input type="radio" name="inputRadio" value="valor3"
+                    placeholder="Digite aqui a label do campo texto"> <input type="text"
+                    placeholder="Digite o valor do 3° campo"></label>
+            <label for="valor4"><input type="radio" name="inputRadio" value="valor4"
+                    placeholder="Digite aqui a label do campo texto"> <input type="text"
+                    placeholder="Digite o valor do 4° campo"></label>
+        </div>
+
+        <div class="opcao input" id="inputCheckbox">
+            <p>Digite os valores de cada opção</p>
+            <input type="text" name="nomeInputRadio" placeholder="Digite aqui a label do campo checkbox">
+
+            <div>
+                <input type="checkbox" name="inputCheckbox" value="valor1"
+                    placeholder="Digite aqui a label do campo texto">
+                <label for="valor1"><input type="text" placeholder="Digite o valor do 1° campo"></label>
+            </div>
+            <div>
+                <input type="checkbox" name="inputCheckbox" value="valor2"
+                    placeholder="Digite aqui a label do campo texto">
+                <label for="valor2"><input type="text" placeholder="Digite o valor do 2° campo"></label>
+            </div>
+            <div>
+                <input type="checkbox" name="inputCheckbox" value="valor3"
+                    placeholder="Digite aqui a label do campo texto">
+                <label for="valor3"><input type="text" placeholder="Digite o valor do 3° campo"></label>
+            </div>
+            <div>
+                <input type="checkbox" name="inputCheckbox" value="valor4"
+                    placeholder="Digite aqui a label do campo texto">
+                <label for="valor4"><input type="text" placeholder="Digite o valor do 4° campo"></label>
+            </div>
+        </div>
+
+        <div class="opcao input" id="inputDate">
+            <p for="inputData">Campo de data</p>
+            <input type="text" nome="inputData" placeholder="Digite aqui a label para o campo de data">
+        </div>
+    </section>
 
     <!-- cabeçalho e menu lateral -->
     <section class="menuSuperior">
@@ -151,12 +205,26 @@
     <!--  -->
 
     <main>
-        <section id="EdicaoPublicacoes">
+        <section>
+            <input type="text" name="titulo" id="nomeFormulario" placeholder="Adicione aqui o nome do Formulario">
+            <div>
+                <input type="file" accept="image/png, image/jpeg" id="foto">
+                <img src="" id="enviarImagem" />
+            </div>
+            <form class="formulario" id="criarFormularios">
+                <div class="input" id="novosInputs">
+                </div>
 
+            </form>
+            <div class="botoes">
+                <button type="button" class="adicionar" id="adicionarInput">+</button>
+                <button type="reset" class="cancelar">Cancelar</button>
+                <button type="button" class="confirmar" id="criarFormulario">Confirmar</button>
+            </div>
         </section>
     </main>
 
-    <script src="../js/crudPublicacao.js"></script>
+    <script src="../js/criarFormulario.js" type="module"></script>
     <script src="../js/padrao.js"></script>
 
 </body>

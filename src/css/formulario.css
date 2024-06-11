@@ -1,0 +1,54 @@
+@import url(styles.css);
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario>* {
+    margin-bottom: 10px;
+}
+
+#nomeFormulario {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#imagemFormulario {
+    width: -webkit-fill-available;
+    height: 200px;
+}
+
+.labelTexto {
+    display: block;
+}
+
+.labelTexto input {
+    width: -webkit-fill-available;
+    margin-top: 10px;
+}
+
+input {
+    height: 25px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+input[type=text] {
+    display: block;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}

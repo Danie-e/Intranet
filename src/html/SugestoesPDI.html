@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/PDI.css">
+    <title>Meus PDI's</title>
+</head>
+<body>
+    <div class="cabecalho">
+        <h1>Criar nova Sugestão de PDI</h1> 
+        <div>
+            <a href="../html/MeusPDIs.html"><button class="botoes">PDI Ativos</button></a>
+            <a href="../html/PDIFinalizados.html"><button class="botoes">Finalizados</button></a>
+        </div>        
+    </div>
+
+    <div id="areaPdi">
+
+        
+
+    </div>
+
+    <div class="pdi">
+        <div class="cabecalhoPdi">
+            <div class="titulo">
+                <span>Título da Sugestão do PDI: <input type="text" placeholder="Digite o título da Sugestão de PDI" id="adcTitulo"></span>
+                <span>Área: <input type="text" placeholder="Digite a área do PDI" id="adcArea"></span>
+            </div>
+            
+            <div class="conteudo">
+                <p>Conteúdo: <input type="text" placeholder="Descreva o conteúdo do PDI como um todo, seu próposito" id="adcConteudo"></p>
+            </div>
+        </div>
+
+        <div class="todasTarefas">
+            <div class="tarefa">
+                <div class="conteudoTarefa">
+                    <p class="nomeTarefa">
+                        Tarefa: 
+                        <input type="text" placeholder="Digite o título da tarefa do PDI" id="cAdcNomeTarefa1">
+                    </p>
+                    <a class="descricaoTarefa">
+                        Link:
+                        <input type="text" placeholder="Adicione o link, caso necessário" id="cAdcLink1">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+                
+        <div class="rodape">
+            <p> </p>
+            <div class="botoesRodape2">
+                <button onclick="salvarsugestoesPDI()">Confirmar</button>
+                <button onclick="()=>{alert('Cancelando cadastro de publicação.')}">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="../js/sugestoesPdi.js"></script>
+    <script src="../js/padrao.js"></script>
+</body>
+</html>

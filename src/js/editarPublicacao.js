@@ -2,6 +2,7 @@ import { funcoes } from "./funcoes.js";
 
 var idpublicacao = '';
 var categoria = '';
+var arquivoImagem = '';
 
 var adicionarSetorBtn = document.querySelector(".adicionarSetor");
 document.addEventListener("DOMContentLoaded", function () {
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let tituloPagina = document.getElementById('nomePublicacao');
     let titulo = document.getElementById('tituloPublicacao');
     let descricao = document.getElementById('resumoPublicacao');
-    var imagem = document.getElementById('imagemPublicacao').value;
+    var imagem = document.getElementById('enviarImagem');
     let texto = document.getElementById('textoPublicacao');
     let categoria = document.getElementById('listaSetores');
 
@@ -46,6 +47,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     titulo.value = dados.titulo;
     descricao.value = dados.descricao;
     texto.value = dados.texto;
+    // alert (dados.imagem)
+        imagem.src =dados.imagem;
     // categoria.innerHTML = listaCategorias;
 })
 
@@ -54,7 +57,7 @@ async function atualizarPublicacao(evento) {
     evento.preventDefault();
     let titulo = document.getElementById('tituloPublicacao').value;
     let descricao = document.getElementById('resumoPublicacao').value;
-    var imagem = document.getElementById('imagemPublicacao').value;
+    var imagem = document.getElementById('enviarImagem');
     let texto = document.getElementById('textoPublicacao').value;
 
     var publicacoes = {
@@ -62,10 +65,11 @@ async function atualizarPublicacao(evento) {
         descricao: descricao,
         imagem: imagem,
         texto: texto,
-        categorias: categoria
+        categorias: categoria,
+        imagem: imagem.src
     }
     console.log(JSON.stringify(publicacoes));
-    const resultado = await fetch(`http://localhost:3000/publicacao/${idpublicacao}`, {
+    const resultado = await fetch(`https://api-intranet.vercel.app/publicacao/${idpublicacao}`, {
         method: "PUT",
         headers: {
             "Content-type": "application/json"
@@ -89,3 +93,20 @@ excluir.addEventListener("click", function () {
 
 const formulario = document.getElementById("formPublicacao");
 formulario.addEventListener("submit", evento => atualizarPublicacao(evento));
+
+
+const imagem = document.getElementById('enviarImagem')
+const foto = document.getElementById('foto')
+foto.addEventListener("change", previewFile);
+
+function previewFile({ target }) {
+    const file = target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+        imagem.src = reader.result;
+        arquivoImagem = reader.result;
+    };
+}

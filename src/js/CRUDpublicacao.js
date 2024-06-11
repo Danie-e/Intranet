@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 async function carregarTodasPublicacaoes() {
-    const result = await fetch("http://localhost:3000/publicacao")
+    const result = await fetch("https://api-intranet.vercel.app/publicacao")
 
     const publicacoes = await result.json();
     publicacoes.forEach(element => {
@@ -19,10 +19,13 @@ async function carregarTodasPublicacaoes() {
             </li> `
         });
 
+        var img = element.autor.imagem == "" ? "../img/Icons/account_circle.svg" : element.autor.imagem;
+        console.log(element.titulo + img);
+
         document.getElementById('EdicaoPublicacoes').innerHTML +=
             `
             <div class="card" id="${element._id}">
-                <img src="../img/Icons/account_circle.svg">
+                <img src="${img}" id="imagem">
                 <div class="publicacao">
                     <h3 class="tituloCard">${element.titulo}</h2>
                         <p class="descricaoCard">${element.descricao}</p>
@@ -31,10 +34,9 @@ async function carregarTodasPublicacaoes() {
                                ${listaCategorias}
                             </ul>
                             <div>
-                            <button class="deletar" onclick="deletarPublicacao('${element._id}')"></button>
-                            <button class="editar"  onclick="editarPublicacao('${element._id}')"></button>
+                                <button class="deletar" onclick="deletarPublicacao('${element._id}')"></button>
+                                <button class="editar"  onclick="editarPublicacao('${element._id}')"></button>
                             </div>
-                            
                         </div>
                 </div>
             </div>
@@ -45,19 +47,20 @@ async function carregarTodasPublicacaoes() {
 }
 
 async function deletarPublicacao(id) {
-    const result = await fetch(`http://localhost:3000/publicacao/${id}`, {
+    const result = await fetch(`https://api-intranet.vercel.app/publicacao/${id}`, {
         method: "DELETE",
         headers: {
             "Content-type": "application/json"
         }
     });
     const resultado = await result.json();
-    if (resultado.ok)
+    if (resultado.status = 200) {
         alert(`${resultado.message} `);
-
+        window.location.href = 'crud_Publicacao.html';
+    }
     else {
         alert(`${resultado.message} `);
-        window.location.href = 'paginaInicial.html';
+        window.location.href = 'crud_Publicacao.html';
     }
 }
 
@@ -65,7 +68,6 @@ function editarPublicacao(id) {
     window.location.href = 'editarPublicacao.html';
     document.cookie = `editarPublicacao = ${id}; path = /`;
 }
-
 
 var card = document.getElementById('EdicaoPublicacoes');
 card.onclick = function (elemento) {

@@ -9,11 +9,13 @@
 </head>
 
 <body>
-
-    <section class="menuSuperior">
+    
+     <!-- cabeçalho e menu lateral -->
+     <section class="menuSuperior">
         <ul class="menu">
             <li>
-                <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones">
+                <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones"
+                    id="menuLateral">
             </li>
             <li>
                 <p>Favoritos</p>
@@ -39,6 +41,114 @@
         </ul>
 
     </section>
+    <nav id="menu_completo">
+        <div id="menu_superior">
+            <!--uma lista com todos os itens do menu-->
+            <ul id="items">
+                <li class="item">
+                    Favoritos
+                </li>
+                <li class="item">
+                    <a href="">
+                        Publicações favoritadas
+                    </a>
+                </li>
+                <li class="item">
+                    Pesquisas
+                </li>
+                <li class="item">
+                    <a href="">
+                        Pesquisas pendentes
+                    </a>
+                </li>
+                <li class="item">
+                    Quizzes
+                </li>
+                <li class="item">
+                    <a href="">
+                        Quizzes pendentes
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="">
+                        Relatórios de Quizzes
+                    </a>
+                </li>
+                <li class="item">
+                    PDI
+                </li>
+                <li class="item">
+                    <a href="MeusPDIs.html">
+                        Meus PDI's
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="PDIFinalizados.html">
+                        PDI's finalizados
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="CriarPDI.html">
+                        Criar PDI
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="SugestoesPDI.html">
+                        Sugestões para PDI
+                    </a>
+                </li>
+                <div id="administrador">
+                    <li class="item">
+                        Adminstrador
+                    </li>
+                    <li class="item">
+                        <a href="criarUsuarios.html">
+                            Criar usuário
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="CRUD_Usuario.html">
+                            Editar usuário
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="criarFormulario.html">
+                            Criar Pesquisas
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="CRUD_Formulario.html">
+                            Editar Pesquisa
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="">
+                            Criar Quiz
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="">
+                            Editar Quiz
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="criarPublicacao.html">
+                            Criar Publicação
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="crud_Publicacao.html">
+                            Editar Públicação
+
+                        </a>
+                    </li>
+                </div>
+            </ul>
+
+            <a href="paginaInicial.html"> <img src="../img/Logo.jpg" alt="Logo da empresa" class="logo"></a>
+        </div>
+    </nav>
+    <!--  -->
 
     <main>
         <section class="publicacao">
@@ -47,17 +157,17 @@
             </p>
 
             <div class="UsuarioDataPublicacao">
-                <div>
-                    <img>
+                <div class="imagemNome">
+                    <img src="" id="imagem" />
                     <p id="nomeAutor"></p>
                 </div>
                 <p id="dataPublicacao"></p>
             </div>
-
+            <img src="" id="imagemPublicacao" />
             <img>
-            <p id="texto">
-            </p>
-           
+            <pre id="texto">
+            </pre>
+
             <ul id="categorias">
             </ul>
         </section>
@@ -65,7 +175,7 @@
 
     <!-- <script src="../js/padrao.js"></script> -->
     <script src="../js/publicacao.js" type="module"></script>
-
+    <script src="../js/padrao.js"></script>
 </body>
 
 </html>

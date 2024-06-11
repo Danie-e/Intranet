@@ -1,0 +1,63 @@
+
+/* Cabeçalho */
+
+#menu_completo {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--color-branco);
+    padding: 20px;
+}
+
+#menu_completo button {
+    display: flex;
+    background-color: var(--color-transparente);
+    border-color: var(--color-transparente);
+}
+
+.menuSuperior {
+    height: 60px;
+    width: initial;
+    display: flex;
+    margin: 30px 40px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li {
+    margin: 0px 10px;
+}
+
+.menu li p {
+    background-color: var(--color-branco);
+    padding: 10px;
+}
+
+.menuLateral {
+    margin-top: 10px;
+}
+.item a{
+    text-decoration: none;
+    color: black;
+
+}
+.icones {
+    padding: 10px;
+    height: 45px;
+    width: 45px;
+}
+
+.logo {
+    height: 45px;
+    width: 45px;
+}
+
+
+#menu_superior {
+    display: flex;
+}

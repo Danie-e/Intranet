@@ -1,4 +1,5 @@
 @import url(./reset.css);
+@import url(./menus.css);
 
 :root {
     --color-transparente: #ffffff00;
@@ -15,40 +16,16 @@ body {
     background-color: var(--color-fundo);
 }
 
-/* Cabeçalho */
-.menuSuperior {
-    height: 60px;
-    width: initial;
-    display: flex;
-    margin: 30px 40px;
-    justify-content: space-between;
-    align-items: center;
+.logo{
+    width: 95px;
+    height: 95px;
 }
-
-.menu {
-    display: flex;
-    flex-direction: row;
+/* Imagem Perfil Usuario */
+#imagem{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
 }
-
-.menu li {
-    margin: 0px 10px;
-}
-
-.menu li p {
-    background-color: var(--color-branco);
-    padding: 10px;
-}
-
-.menuLateral {
-    margin-top: 10px;
-}
-
-.icones {
-    padding: 10px;
-    height: 45px;
-    width: 45px;
-}
-
 
 /* icones */
 .favoritar {
@@ -60,6 +37,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .deletar {
     height: 30px;
     width: 30px;
@@ -69,6 +47,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .editar {
     height: 30px;
     width: 30px;
@@ -78,6 +57,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .resetar {
     height: 30px;
     width: 30px;
@@ -104,11 +84,21 @@ body {
     background-color: var(--color-cancelar);
     height: 40px;
     width: 150px;
-    margin: 10px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .confirmar {
     background-color: var(--color-verde-intermediario);
     height: 40px;
     width: 150px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.botaoEditar{
+    background-color: var(--color-verde-intermediario);
+    height: 40px;
+    width: 150px;
+    margin: 5px;
+    border-radius: 5px;
 }

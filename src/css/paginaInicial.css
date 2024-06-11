@@ -1,22 +1,51 @@
 @import url(./styles.css);
 @import url(./card.css);
 
-.logo {
-    height: 45px;
-    width: 45px;
-}
-
-.menu_completo {
-    display: block;
-    flex-direction: column;
-}
-
-.menu_completo button {
+.banner {
     display: flex;
-    background-color: var(--color-transparente);
-    border-color: var(--color-transparente);
+    padding: 4%;
+    width: -webkit-fill-available;
+    max-height: 350px;
 }
 
-#menu_superior {
-    display: none;
+.carrossel {
+    /* position: relative; */
+    display: flex;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 5%;
+}
+.cardFormulario{
+    background-color: var(--color-fundo);
+    /* position: sticky; */
+    left: 0;
+    flex-shrink: 0;
+    object-fit: cover;
+    scroll-behavior: smooth;
+}
+
+.novasPublicacoes {
+    background-color: var(--color-verde-intermediario);
+    padding: 1% 1%;
+    margin: 0 4%;
+}
+
+.cardFormulario {
+    border: 1px solid;
+    padding: 1%;
+    width: 150px;
+    margin: 10px;
+}
+
+.cardFormulario>* {
+pointer-events: none;
+}
+
+.cardFormulario__Imagem {
+    width: 100px;
+    height: 100px;
+}
+
+.cardFormulario__paragrafo {
+    color: var(--color-verde-escuro);
 }

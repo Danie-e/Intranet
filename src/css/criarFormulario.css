@@ -1,0 +1,57 @@
+@import url(styles.css);
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario>* {
+    margin-bottom: 10px;
+}
+
+#nomeFormulario {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#enviarImagem {
+    display: none;
+    width: -webkit-fill-available;
+    height: 200px;
+}
+
+input {
+    height: 25px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    border-top: 1px solid;
+}
+
+
+.opcao>* {
+    pointer-events: none;
+}
+
+.adicionar {
+    display: block;
+    width: -webkit-fill-available;
+}
+
+.modal {
+    display: none;
+    border: 2px solid black;
+    position: absolute;
+    width: 80%;
+    padding: 1%;
+    margin: 10%;
+    background-color: var(--color-branco);
+}

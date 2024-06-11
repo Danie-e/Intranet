@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intraverso</title>
-    <link rel="stylesheet" href="../css/CRUDpublicacao.css">
+    <link rel="stylesheet" href="../css/criarPublicacao.css">
 </head>
 
 <body>
+
+    <!-- cabeçalho e menu lateral -->
     <section class="menuSuperior">
         <ul class="menu">
             <li>
-                <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones">
+                <img src="../img/Icons/menu.svg" alt="Imagem logo da empresa" class="menuLateral icones"
+                    id="menuLateral">
             </li>
             <li>
                 <p>Favoritos</p>
@@ -38,18 +41,131 @@
         </ul>
 
     </section>
+    <nav id="menu_completo">
+        <div id="menu_superior">
+            <!--uma lista com todos os itens do menu-->
+            <ul id="items">
+                <li class="item">
+                    Favoritos
+                </li>
+                <li class="item">
+                    <a href="">
+                        Publicações favoritadas
+                    </a>
+                </li>
+                <li class="item">
+                    Pesquisas
+                </li>
+                <li class="item">
+                    <a href="">
+                        Pesquisas pendentes
+                    </a>
+                </li>
+                <li class="item">
+                    Quizzes
+                </li>
+                <li class="item">
+                    <a href="">
+                        Quizzes pendentes
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="">
+                        Relatórios de Quizzes
+                    </a>
+                </li>
+                <li class="item">
+                    PDI
+                </li>
+                <li class="item">
+                    <a href="MeusPDIs.html">
+                        Meus PDI's
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="PDIFinalizados.html">
+                        PDI's finalizados
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="CriarPDI.html">
+                        Criar PDI
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="SugestoesPDI.html">
+                        Sugestões para PDI
+                    </a>
+                </li>
+                <div id="administrador">
+                    <li class="item">
+                        Adminstrador
+                    </li>
+                    <li class="item">
+                        <a href="criarUsuarios.html">
+                            Criar usuário
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="CRUD_Usuario.html">
+                            Editar usuário
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="criarFormulario.html">
+                            Criar Pesquisas
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="CRUD_Formulario.html">
+                            Editar Pesquisa
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="">
+                            Criar Quiz
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="">
+                            Editar Quiz
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="criarPublicacao.html">
+                            Criar Publicação
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="crud_Publicacao.html">
+                            Editar Públicação
+
+                        </a>
+                    </li>
+                </div>
+            </ul>
+
+            <a href="paginaInicial.html"> <img src="../img/Logo.jpg" alt="Logo da empresa" class="logo"></a>
+        </div>
+    </nav>
+    <!--  -->
+
     <main>
         <section class="formularioPublicacao">
             <form id="formPublicacao">
-                <input type="text" name="titulo" class="titulo" id="tituloPublicacao" placeholder="Digite o titulo da publicação"
-                    alt="Digite o titulo da publicação">
+                <input type="text" name="titulo" class="titulo" id="tituloPublicacao"
+                    placeholder="Digite o titulo da publicação" alt="Digite o titulo da publicação">
                 <input type="text" name="resumo" class="resumo" id="resumoPublicacao"
                     placeholder="Adicione uma breve descrição sobre o conteudo do post"
                     alt="Adicione uma breve descrição sobre o conteudo do post">
-                <input type="file" name="capa" placeholder="Adicione uma imagem para capa do post" id="imagemPublicacao"
-                    alt="Adicione uma imagem para capa do post">
-                <textarea name="descricao" class="descricao" id="textoPublicacao" placeholder="Digite aqui o texto da publicação"
-                    alt="Digite aqui o texto da publicação"></textarea>
+                <div>
+                    <input type="file" accept="image/*" name="capa" placeholder="Adicione uma imagem para capa do post"
+                        id="foto" alt="Adicione uma imagem para capa do post">
+                    <img src="" id="enviarImagem" />
+                </div>
+
+                <textarea name="descricao" class="descricao" id="textoPublicacao"
+                    placeholder="Digite aqui o texto da publicação" alt="Digite aqui o texto da publicação"></textarea>
 
                 <div class="setores">
                     <input type="text" id="inputSetor" placeholder="Adicionar Setores" list="setor">
@@ -60,20 +176,21 @@
                         <option value="Administração"></option>
                     </datalist>
                     <button type="button" class="adicionarSetor">Adicionar Setor</button>
-
                 </div>
                 <ul id="listaSetores">
                 </ul>
 
                 <div class="botoes">
                     <button type="reset" class="resetar"></button>
-                    <a href="./paginaInicial.html"><button type="button" class="cancelar" onclick="()=>{alert('Cancelando cadastro de publicação.')}">Cancelar</button></a>
+                    <a href="./paginaInicial.html"><button type="button" class="cancelar"
+                            onclick="()=>{alert('Cancelando cadastro de publicação.')}">Cancelar</button></a>
                     <button class="confirmar">Confirmar</button>
                 </div>
             </form>
         </section>
     </main>
-    <script src="../js/criarPublicacao.js"></script>
+    <script src="../js/criarPublicacao.js" type="module"></script>
+    <script src="../js/padrao.js"></script>
 </body>
 
 </html>

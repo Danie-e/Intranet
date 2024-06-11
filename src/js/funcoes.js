@@ -10,16 +10,18 @@ function acharCookie(nome) {
     return result[1];
 }
 
-async function editarPublicacao(id){
-
+async function procurarUsuario(id) {
+    const result = await fetch(`https://api-intranet.vercel.app/usuarios/${id}`);
+    return await result.json();
 }
+
 async function procurarPublicacao(id) {
-    const result = await fetch(`http://localhost:3000/publicacao/${id}`);
-    return result.json();
+    const result = await fetch(`https://api-intranet.vercel.app/publicacao/${id}`);
+    return await result.json();
 }
 
 async function deletarPublicacao(id) {
-    const result = await fetch(`http://localhost:3000/publicacao/${id}`, {
+    const result = await fetch(`https://api-intranet.vercel.app/publicacao/${id}`, {
         method: "DELETE",
         headers: {
             "Content-type": "application/json"
@@ -35,10 +37,9 @@ async function deletarPublicacao(id) {
     }
 }
 
-
 export const funcoes = {
     acharCookie,
-    editarPublicacao,
     deletarPublicacao,
-    procurarPublicacao
+    procurarPublicacao,
+    procurarUsuario
 }

@@ -34,8 +34,7 @@
         <ul class="menu">
             <li>
                 <input id="inputPesquisa" type="Pesquise por um post">
-                <button onclick="pesquisarPublicacao()"><img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa"></button>
-                
+                <button id="PesquisaMenuButton" onclick="pesquisarPublicacao()"><img id="PesquisaMenuImg" src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa"></button>
             </li>
             <li>
                 <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
@@ -67,12 +66,12 @@
                     Quizzes
                 </li>
                 <li class="item">
-                    <a href="relatorioQuiz.html">
+                    <a href="">
                         Quizzes pendentes
                     </a>
                 </li>
                 <li class="item">
-                    <a href="relatorioQuiz.html">
+                    <a href="">
                         Relatórios de Quizzes
                     </a>
                 </li>
@@ -124,7 +123,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <a href="criarQuiz.html">
+                        <a href="">
                             Criar Quiz
                         </a>
                     </li>
@@ -152,21 +151,14 @@
     </nav>
     <!--  -->
 
-    <section><img src="../img/banner.png" class="banner" /></section>
 
     <main>
-        <section id="carrossel" class="carrossel">
-
-        </section>
-
-     
-        
         <section id="paginaInicialPublicacoes">
-            <p class="novasPublicacoes">Novas Publicações</p>
+            <p class="novasPublicacoes">Resultados da sua Pesquisa</p>
         </section>
     </main>
 
-    <script src="../js/paginaInicial.js"></script>
+    <script src="../js/resultadosPesquisa.js"></script>
     <script src="../js/padrao.js"></script>
 
 </body>

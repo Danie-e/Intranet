@@ -15,6 +15,7 @@
     border-color: var(--color-transparente);
 }
 
+
 .menuSuperior {
     height: 60px;
     width: initial;
@@ -61,3 +62,5 @@
 #menu_superior {
     display: flex;
 }
+
+

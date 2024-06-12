@@ -18,7 +18,7 @@
                     id="menuLateral">
             </li>
             <li>
-                <p>Favoritos</p>
+                <a href="paginaInicialComFiltro.html"><p>Todas as Publicações</p></a>
             </li>
             <li>
                 <p>Pesquisas</p>
@@ -33,7 +33,8 @@
         </ul>
         <ul class="menu">
             <li>
-                <img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa">
+                <input id="inputPesquisa" type="Pesquise por um post">
+                <button onclick="pesquisarPublicacao()"><img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa"></button>
             </li>
             <li>
                 <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
@@ -46,7 +47,7 @@
             <!--uma lista com todos os itens do menu-->
             <ul id="items">
                 <li class="item">
-                    Favoritos
+                    <a href="paginaInicialComFiltro.html">Todas as Publicações</a>
                 </li>
                 <li class="item">
                     <a href="">
@@ -151,38 +152,14 @@
     <!--  -->
     
     <main>
-
-        <div id="filtroCategoria">
+        
 
 
 
         </div>
+        
         <section id="paginaInicialPublicacoes">
-
-            <div class="publicacao">
-                <img src="../img/Icons/account_circle.svg">
-                <div class="card">
-                    <h3 class="tituloCard">teste</h2>
-                        <p class="descricaoCard">It is a long established fact that a reader will be distracted by the
-                            readable content of a page when looking at its layout. The point of using Lorem Ipsum is
-                            that it has a more-or-less normal distribution of letters, as opposed to using 'Content
-                            here, content here', making it look like readable English. Many desktop publishing packages
-                            and web page editors now use Lorem Ipsum as their default model text, and a search for
-                            'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                            evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the
-                            like).</p>
-                        <div class="favoritoCategorias">
-                            <ul>
-                                <li>
-                                    categoria
-                                </li>
-                                <li>categoria</li>
-                            </ul>
-                            <button class="favoritar"></button>
-                        </div>
-                </div>
-            </div>
-
+            <p class="novasPublicacoes">Novas Publicações</p>
         </section>
     </main>
 

@@ -24,6 +24,16 @@
     scroll-behavior: smooth;
 }
 
+#categoriasPosts{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+#categoriasPosts a {
+    padding: 20px;
+}
+
 .novasPublicacoes {
     background-color: var(--color-verde-intermediario);
     padding: 1% 1%;
@@ -48,4 +58,8 @@ pointer-events: none;
 
 .cardFormulario__paragrafo {
     color: var(--color-verde-escuro);
+}
+
+a {
+    text-decoration: none;
 }

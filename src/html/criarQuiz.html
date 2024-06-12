@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+<html lang="pt-br">
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/criarQuiz.css">
-        <title>Criar Quizes</title>
-    </head>
-    <body>
- 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/criarQuiz.css">
+    <title>Criar Quizes</title>
+</head>
+
+<body>
+
     <!-- cabeçalho e menu lateral -->
     <section class="menuSuperior">
         <ul class="menu">
@@ -136,7 +137,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <a href="crud_Publicacao.html">
+                        <a href="CRUD_Publicacao.html">
                             Editar Públicação
 
                         </a>
@@ -149,23 +150,24 @@
     </nav>
     <!--  -->
 
-        <main>
-            <div>
-                <input type="text" id="nomeQuiz" placeholder="Insira o nome do Quiz">
-            </div>
-            <div id="questao">
-                
-            </div>
-            <div id="botao">
-                <input type="button" onclick="adicionarQuestao()" id="botaoAdicionarQuestao" value="+">
-            </div>
-            <div>
-                <input type="button" onclick="criarQuiz()" id="botaoCriarQuiz" value="Confirmar">
-            </div>
+    <main>
+        <div>
+            <input type="text" id="nomeQuiz" placeholder="Insira o nome do Quiz">
+        </div>
+        <div id="questao">
 
-        </main>
-        <script src="../js/criarQuiz.js"></script>
+        </div>
+        <div id="botao">
+            <input type="button" onclick="adicionarQuestao()" id="botaoAdicionarQuestao" value="+">
+        </div>
+        <div>
+            <input type="button" onclick="criarQuiz()" id="botaoCriarQuiz" value="Confirmar">
+        </div>
+
+    </main>
+    <script src="../js/criarQuiz.js"></script>
     <script src="../js/padrao.js"></script>
 
-    </body>
+</body>
+
 </html>

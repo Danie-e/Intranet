@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+<html lang="pt-br">
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/telaInicialQuiz.css">
-        <title>Tela Inicial Quizes</title>
-    </head>
-    <body>
- 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/telaInicialQuiz.css">
+    <title>Tela Inicial Quizes</title>
+</head>
+
+<body>
+
     <!-- cabeçalho e menu lateral -->
     <section class="menuSuperior">
         <ul class="menu">
@@ -136,7 +137,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <a href="crud_Publicacao.html">
+                        <a href="CRUD_Publicacao.html">
                             Editar Públicação
 
                         </a>
@@ -149,21 +150,21 @@
     </nav>
     <!--  -->
 
+    <main>
+        <div id="telaInicialQuiz">
+            <section id="areaTexto">
 
-        <main>
-            <div id="telaInicialQuiz">
-                <section id="areaTexto">
-                    
-                </section>
-                <section id="areaBotoes">
-                    <button type="button" id="botaoVoltar" onclick="volta()">Voltar</button>
-                    <button type="button" id="botaoIniciar" onclick="avanca()">Iniciar</button>
-                </section>
-                <div id="jsCardQuiz"></div>
-            </div>
-        </main>
-        <script src="../js/telaInicialQuiz.js"></script>
+            </section>
+            <section id="areaBotoes">
+                <button type="button" id="botaoVoltar" onclick="volta()">Voltar</button>
+                <button type="button" id="botaoIniciar" onclick="avanca()">Iniciar</button>
+            </section>
+            <div id="jsCardQuiz"></div>
+        </div>
+    </main>
+    <script src="../js/telaInicialQuiz.js"></script>
     <script src="../js/padrao.js"></script>
 
-    </body>
+</body>
+
 </html>

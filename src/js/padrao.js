@@ -10,3 +10,9 @@ menu.addEventListener('click', function () {
         container.style.display = 'block';
     }
 })
+
+async function pesquisarPublicacao() {
+    var req = document.getElementById('inputPesquisa').value;
+    localStorage.setItem("filtroPesquisa", req);
+    window.location.href = "./resultadosPesquisa.html";
+};

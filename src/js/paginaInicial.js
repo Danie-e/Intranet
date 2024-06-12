@@ -65,9 +65,3 @@ cardFormulario.onclick = function (elemento) {
     window.location.href = 'formulario.html';
     document.cookie = `idFormulario=${elemento.target.id}; path=/`;
 };
-
-async function pesquisarPublicacao() {
-    var req = document.getElementById('inputPesquisa').value;
-    localStorage.setItem("filtroPesquisa", req);
-    window.location.href = "./resultadosPesquisa.html";
-};

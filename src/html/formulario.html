@@ -18,7 +18,7 @@
                     id="menuLateral">
             </li>
             <li>
-                <p>Favoritos</p>
+                <a href="paginaInicialComFiltro.html"><p>Todas as Publicações</p></a>
             </li>
             <li>
                 <p>Pesquisas</p>
@@ -33,7 +33,9 @@
         </ul>
         <ul class="menu">
             <li>
-                <img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa">
+                <input id="inputPesquisa" type="Pesquise por um post">
+                <button onclick="pesquisarPublicacao()"  class="pesquisa"><img src="../img/Icons/search.svg" class="icones" alt="Icone pesquisa"></button>
+                
             </li>
             <li>
                 <img src="../img/Icons/account_circle.svg" class="icones" alt="Sua conta">
@@ -46,7 +48,7 @@
             <!--uma lista com todos os itens do menu-->
             <ul id="items">
                 <li class="item">
-                    Favoritos
+                    <a href="paginaInicialComFiltro.html">Todas as Publicações</a>
                 </li>
                 <li class="item">
                     <a href="">
@@ -149,7 +151,6 @@
         </div>
     </nav>
     <!--  -->
-
 
     <main>
         <section>

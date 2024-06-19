@@ -1,11 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
-    const carrossel = document.getElementById('carrossel');
     const publicacao = await fetch("https://api-intranet.vercel.app/publicacao")
-
-
-
-  
 
     const publicacoes = await publicacao.json();
     publicacoes.forEach(element => {
@@ -34,17 +29,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div> `
     });
 
-    const formulario = await fetch("https://api-intranet.vercel.app/formulario")
-    const formularios = await formulario.json();
-    formularios.forEach(element => {
-        carrossel.innerHTML += `
-        <div class="cardFormulario" id="${element._id}">
-            <img src="${element.imagem}" class="cardFormulario__Imagem">
-            <h2 class="cardFormulario__Titulo">${element.titulo}</h2>
-            <p class="cardFormulario__Paragrafo">Novo Formulario</p>
-        </div>
-        `;
-    });
 });
 
 var card = document.getElementById('paginaInicialPublicacoes');
@@ -52,14 +36,6 @@ card.onclick = function (elemento) {
     window.location.href = 'publicacao.html';
     document.cookie = `idPublicacao=${elemento.target.id}; path=/`;
 };
-
-
-var cardFormulario = document.getElementById('carrossel');
-cardFormulario.onclick = function (elemento) {
-    window.location.href = 'formulario.html';
-    document.cookie = `idFormulario=${elemento.target.id}; path=/`;
-};
-
 
 async function pesquisarPublicacao() {
     var req = document.getElementById('inputPesquisa').value;

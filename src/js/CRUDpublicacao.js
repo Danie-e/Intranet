@@ -20,7 +20,7 @@ async function carregarTodasPublicacaoes() {
         });
 
         var img = element.autor.imagem == "" ? "../img/Icons/account_circle.svg" : element.autor.imagem;
-        console.log(element.titulo + img);
+        // console.log(element.titulo + img);
 
         document.getElementById('EdicaoPublicacoes').innerHTML +=
             `
@@ -56,11 +56,11 @@ async function deletarPublicacao(id) {
     const resultado = await result.json();
     if (resultado.status = 200) {
         alert(`${resultado.message} `);
-        window.location.href = 'crud_Publicacao.html';
+        window.location.href = 'CRUD_Publicacao.html';
     }
     else {
         alert(`${resultado.message} `);
-        window.location.href = 'crud_Publicacao.html';
+        window.location.href = 'CRUD_Publicacao.html';
     }
 }
 

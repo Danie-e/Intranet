@@ -27,8 +27,8 @@ async function salvarPDI() {
     });
     console.log(result);
     if (result.ok) {
-        alert("PDI criado com sucesso");
-        window.location.href ="./meusPdis.html";
+        alert("PDI criado com sucesso!");
+        window.location.href ="./MeusPDIs.html";
     }
     else {
         alert(`${result.message} - Não foi possivel criar PDI!`);

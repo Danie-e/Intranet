@@ -31,7 +31,7 @@ async function salvarsugestoesPDI() {
     console.log(result);
     if (result.ok) {
         alert("Sugestão de PDI criado com sucesso");
-        window.location.href ="./VerSugestoesPDI.html";
+        window.location.href ="VerSugestoesPdi.html";
     }
     else {
         alert(`${result.message} - Não foi possivel criar sugestoes de PDI!`);
